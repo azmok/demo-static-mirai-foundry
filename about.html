@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 
-<html class="scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ABOUT — MIRAI FOUNDRY</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ABOUT — MIRAI FOUNDRY</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -67,169 +73,221 @@
                         "body": ["Inter"],
                         "label": ["Inter"]
                     },
-                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px" },
                 },
             },
         }
     </script>
-<style>
-        body { font-family: 'Inter', sans-serif; }
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
+
 <body class="bg-primary-container text-on-background antialiased selection:bg-secondary selection:text-white">
-<!-- TopNavBar -->
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[1.4rem] md:px-[7rem] py-6 mix-blend-difference">
-<div class="text-2xl font-black tracking-tighter text-white">MIRAI FOUNDRY</div>
-<div class="hidden md:flex gap-12">
-<a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white hover:bg-white hover:text-black transition-none px-2 py-1" href="#">WORK</a>
-<a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white bg-white text-black transition-none px-2 py-1" href="#">STUDIO</a>
-<a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white hover:bg-white hover:text-black transition-none px-2 py-1" href="#">JOURNAL</a>
-<a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white hover:bg-white hover:text-black transition-none px-2 py-1" href="#">CONTACT</a>
-</div>
-<button class="md:hidden text-white"><span class="material-symbols-outlined">menu</span></button>
-</nav>
-<main>
-<!-- HERO SECTION (Yellow) -->
-<section class="min-h-screen bg-primary-container pt-32 pb-20 px-[1.4rem] md:px-[7rem] flex flex-col justify-end">
-<div class="mb-12">
-<p class="text-[10px] uppercase tracking-[0.2em] font-bold text-on-background mb-4">ESTABLISHED 2024 / TOKYO — BERLIN</p>
-<h1 class="text-[12vw] font-black tracking-[-0.04em] leading-[0.85] text-on-background uppercase">
-                    Future<br/>Forged.
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[1.4rem] md:px-[7rem] py-6 mix-blend-difference">
+        <div class="text-2xl font-black tracking-tighter text-white">MIRAI FOUNDRY</div>
+        <div class="hidden md:flex gap-12 items-center">
+            <a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-black transition-none px-2 py-1"
+                href="./index.html">HOME</a>
+            <a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-black transition-none px-2 py-1"
+                href="./works.html">WORKS</a>
+            <a class="text-[10px] uppercase tracking-[0.2em] font-black text-black bg-white px-2 py-1 transition-none"
+                href="./about.html">ABOUT</a>
+            <a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-black transition-none px-2 py-1"
+                href="./contact.html">CONTACT</a>
+        </div>
+        <button class="md:hidden text-white"><span class="material-symbols-outlined">menu</span></button>
+    </nav>
+    <main>
+        <!-- HERO SECTION (Yellow) -->
+        <section
+            class="min-h-screen bg-primary-container pt-32 pb-20 px-[1.4rem] md:px-[7rem] flex flex-col justify-end">
+            <div class="mb-12">
+                <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-on-background mb-4">ESTABLISHED 2024 /
+                    TOKYO — BERLIN</p>
+                <h1 class="text-[12vw] font-black tracking-[-0.04em] leading-[0.85] text-on-background uppercase">
+                    Future<br />Forged.
                 </h1>
-</div>
-<div class="grid grid-cols-12 gap-4">
-<div class="col-span-12 md:col-start-8 md:col-span-5">
-<p class="text-lg leading-relaxed text-on-background font-medium">
-                        MIRAI FOUNDRY IS A CREATIVE ENGINE AT THE INTERSECTION OF HUMAN INTUITION AND SYNTHETIC INTELLIGENCE. WE DO NOT USE TOOLS; WE CO-AUTHOR WITH THEM.
+            </div>
+            <div class="grid grid-cols-12 gap-4">
+                <div class="col-span-12 md:col-start-8 md:col-span-5">
+                    <p class="text-lg leading-relaxed text-on-background font-medium">
+                        MIRAI FOUNDRY IS A CREATIVE ENGINE AT THE INTERSECTION OF HUMAN INTUITION AND SYNTHETIC
+                        INTELLIGENCE. WE DO NOT USE TOOLS; WE CO-AUTHOR WITH THEM.
                     </p>
-</div>
-</div>
-</section>
-<!-- STUDIO STORY (Blue) -->
-<section class="bg-secondary py-32 px-[1.4rem] md:px-[7rem]">
-<div class="grid grid-cols-12 gap-0 border-none">
-<div class="col-span-12 md:col-span-6 mb-20 md:mb-0">
-<div class="sticky top-32">
-<p class="text-[10px] uppercase tracking-[0.2em] font-bold text-white mb-6">SECTION 01 / GENESIS</p>
-<h2 class="text-[8vw] font-black tracking-[-0.04em] leading-none text-white uppercase">The<br/>Shift</h2>
-</div>
-</div>
-<div class="col-span-12 md:col-span-6 space-y-16">
-<div class="bg-white/5 p-12 backdrop-blur-sm">
-<span class="text-[11px] uppercase tracking-[0.15em] text-white block mb-4">01. ORIGIN</span>
-<p class="text-white text-xl leading-relaxed">
-                            Founded by a collective of architects and coders, Mirai Foundry was born from the realization that the traditional agency model is obsolete. Efficiency is no longer the goal; hyper-innovation is.
+                </div>
+            </div>
+        </section>
+        <!-- STUDIO STORY (Blue) -->
+        <section class="bg-secondary py-32 px-[1.4rem] md:px-[7rem]">
+            <div class="grid grid-cols-12 gap-0 border-none">
+                <div class="col-span-12 md:col-span-6 mb-20 md:mb-0">
+                    <div class="sticky top-32">
+                        <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-white mb-6">SECTION 01 / GENESIS
                         </p>
-</div>
-<div class="bg-white p-12">
-<span class="text-[11px] uppercase tracking-[0.15em] text-secondary block mb-4">02. EVOLUTION</span>
-<p class="text-secondary text-xl font-bold leading-relaxed">
-                            We transitioned from digital-first to intelligence-first. Every pixel we render is backed by millions of data points, refined by the human hand, and polished by the aesthetic eye.
+                        <h2 class="text-[8vw] font-black tracking-[-0.04em] leading-none text-white uppercase">
+                            The<br />Shift</h2>
+                    </div>
+                </div>
+                <div class="col-span-12 md:col-span-6 space-y-16">
+                    <div class="bg-white/5 p-12 backdrop-blur-sm">
+                        <span class="text-[11px] uppercase tracking-[0.15em] text-white block mb-4">01. ORIGIN</span>
+                        <p class="text-white text-xl leading-relaxed">
+                            Founded by a collective of architects and coders, Mirai Foundry was born from the
+                            realization that the traditional agency model is obsolete. Efficiency is no longer the goal;
+                            hyper-innovation is.
                         </p>
-</div>
-</div>
-</div>
-</section>
-<!-- AI WORKFLOW (Off-White) -->
-<section class="bg-tertiary-fixed py-32 px-[1.4rem] md:px-[7rem] overflow-hidden">
-<div class="mb-24 flex justify-between items-start">
-<h2 class="text-[10vw] font-black tracking-[-0.04em] leading-none text-on-background uppercase">Synthetic<br/>Flow</h2>
-<div class="hidden md:block w-24 h-[512px] bg-on-background"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Step 1 -->
-<div class="group border-t-2 border-on-background pt-8">
-<div class="flex items-center gap-4 mb-8">
-<span class="text-4xl font-black">01</span>
-<div class="h-[2px] flex-grow bg-on-background"></div>
-</div>
-<h3 class="text-2xl font-black mb-4 uppercase">Latent Discovery</h3>
-<p class="text-sm leading-relaxed text-on-background/80">
-                        We map the conceptual territory using custom LLMs trained on avant-garde visual libraries. We find the "ghost in the machine" before drawing a single line.
+                    </div>
+                    <div class="bg-white p-12">
+                        <span class="text-[11px] uppercase tracking-[0.15em] text-secondary block mb-4">02.
+                            EVOLUTION</span>
+                        <p class="text-secondary text-xl font-bold leading-relaxed">
+                            We transitioned from digital-first to intelligence-first. Every pixel we render is backed by
+                            millions of data points, refined by the human hand, and polished by the aesthetic eye.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- AI WORKFLOW (Off-White) -->
+        <section class="bg-tertiary-fixed py-32 px-[1.4rem] md:px-[7rem] overflow-hidden">
+            <div class="mb-24 flex justify-between items-start">
+                <h2 class="text-[10vw] font-black tracking-[-0.04em] leading-none text-on-background uppercase">
+                    Synthetic<br />Flow</h2>
+                <div class="hidden md:block w-24 h-[512px] bg-on-background"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="group border-t-2 border-on-background pt-8">
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="text-4xl font-black">01</span>
+                        <div class="h-[2px] flex-grow bg-on-background"></div>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 uppercase">Latent Discovery</h3>
+                    <p class="text-sm leading-relaxed text-on-background/80">
+                        We map the conceptual territory using custom LLMs trained on avant-garde visual libraries. We
+                        find the "ghost in the machine" before drawing a single line.
                     </p>
-</div>
-<!-- Step 2 -->
-<div class="group border-t-2 border-on-background pt-8 bg-on-background text-white p-8">
-<div class="flex items-center gap-4 mb-8">
-<span class="text-4xl font-black">02</span>
-<div class="h-[2px] flex-grow bg-white"></div>
-</div>
-<h3 class="text-2xl font-black mb-4 uppercase">Algorithmic Sculpting</h3>
-<p class="text-sm leading-relaxed text-white/80">
-                        Using stable diffusion and parametric modeling, we generate thousands of iterations in minutes. The selection is brutal. Only the deviant survives.
+                </div>
+                <!-- Step 2 -->
+                <div class="group border-t-2 border-on-background pt-8 bg-on-background text-white p-8">
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="text-4xl font-black">02</span>
+                        <div class="h-[2px] flex-grow bg-white"></div>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 uppercase">Algorithmic Sculpting</h3>
+                    <p class="text-sm leading-relaxed text-white/80">
+                        Using stable diffusion and parametric modeling, we generate thousands of iterations in minutes.
+                        The selection is brutal. Only the deviant survives.
                     </p>
-</div>
-<!-- Step 3 -->
-<div class="group border-t-2 border-on-background pt-8">
-<div class="flex items-center gap-4 mb-8">
-<span class="text-4xl font-black">03</span>
-<div class="h-[2px] flex-grow bg-on-background"></div>
-</div>
-<h3 class="text-2xl font-black mb-4 uppercase">Human Refinement</h3>
-<p class="text-sm leading-relaxed text-on-background/80">
-                        The final 10%. This is where the soul is added. Our designers manually override the AI to inject tension, error, and cultural relevance.
+                </div>
+                <!-- Step 3 -->
+                <div class="group border-t-2 border-on-background pt-8">
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="text-4xl font-black">03</span>
+                        <div class="h-[2px] flex-grow bg-on-background"></div>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 uppercase">Human Refinement</h3>
+                    <p class="text-sm leading-relaxed text-on-background/80">
+                        The final 10%. This is where the soul is added. Our designers manually override the AI to inject
+                        tension, error, and cultural relevance.
                     </p>
-</div>
-</div>
-</section>
-<!-- PHILOSOPHY (Black) -->
-<section class="bg-on-background py-40 px-[1.4rem] md:px-[7rem] relative">
-<div class="absolute right-0 top-0 w-1/3 h-full overflow-hidden opacity-20">
-<img class="w-full h-full object-cover grayscale invert" data-alt="Dark abstract technical architectural wireframe pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZgMUGDGmABeWWybjePGApeUlNsjja9cWUTYN0vCo4Vn-uevSg8wAZJdfZuGWWukJNG2Pxd4xnqJuhq5ZFfySEV0YPnjahh-bhFGTHpEBesYtG0FwCJDK6hn3sB0EKNEGnyGb3VzVs2j3BG3pQ-80tCQDSVnxy9KLlTcfqQqKcV-1VTdPvSwHi2AbO5C-FscWqZw5LSicqUTb3xVg0Ef8VcVLbD-KHHqzH0AL0DqvJrHZ89ctqAG6d4qDxAhlJo8P8izoTCaRsqQZf"/>
-</div>
-<div class="relative z-10 max-w-4xl">
-<p class="text-[11px] uppercase tracking-[0.15em] text-primary-container mb-12">THE MANIFESTO</p>
-<div class="space-y-24">
-<div>
-<h4 class="text-white text-4xl md:text-6xl font-black tracking-tight mb-6 uppercase">Efficiency is for the weak.</h4>
-<p class="text-white/60 text-xl max-w-2xl">We do not automate to save time. We automate to gain scale. The time saved is reinvested into the pursuit of radical aesthetics.</p>
-</div>
-<div>
-<h4 class="text-white text-4xl md:text-6xl font-black tracking-tight mb-6 uppercase">Precision is the priority.</h4>
-<p class="text-white/60 text-xl max-w-2xl">A pixel is not a point; it is a coordinate in a vast possibility space. We navigate that space with surgical intent.</p>
-</div>
-<div>
-<h4 class="text-white text-4xl md:text-6xl font-black tracking-tight mb-6 uppercase">Structure is Anarchy.</h4>
-<p class="text-white/60 text-xl max-w-2xl">Rules exist to be broken with mathematical perfection. We embrace the grid only to defy it.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA / DATA STRIP (Yellow) -->
-<section class="bg-primary-container py-20 px-[1.4rem] md:px-[7rem] flex flex-col md:flex-row items-center justify-between">
-<div class="flex items-center gap-8 mb-12 md:mb-0">
-<div class="w-12 h-12 bg-on-background flex items-center justify-center">
-<span class="material-symbols-outlined text-white" data-icon="bolt">bolt</span>
-</div>
-<h5 class="text-4xl font-black text-on-background uppercase tracking-tighter">Ready for the shift?</h5>
-</div>
-<div class="flex flex-col md:flex-row gap-4 w-full md:w-auto">
-<button class="bg-on-background text-white px-12 py-6 text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-white hover:text-on-background transition-none">START A PROJECT</button>
-<button class="border-2 border-on-background text-on-background px-12 py-6 text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-on-background hover:text-white transition-none">VIEW WORK</button>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full bg-[#0B0B0B] px-[1.4rem] md:px-[7rem] py-12 flex flex-col md:flex-row justify-between items-center">
-<div class="mb-8 md:mb-0">
-<div class="text-lg font-black text-white mb-2">MIRAI FOUNDRY</div>
-<p class="text-[11px] uppercase tracking-[0.15em] text-white/60">©2024 MIRAI FOUNDRY. ALL RIGHTS RESERVED.</p>
-</div>
-<div class="flex gap-8">
-<a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none" href="#">INSTAGRAM</a>
-<a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none" href="#">TWITTER</a>
-<a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none" href="#">LINKEDIN</a>
-</div>
-</footer>
-<!-- Floating Data Strip (Vertical Decor) -->
-<div class="fixed right-0 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-12 pointer-events-none mix-blend-difference">
-<span class="text-[10px] uppercase tracking-[0.4em] font-bold text-white rotate-90 whitespace-nowrap">SYNTHETIC DESIGN SYSTEMS</span>
-<div class="w-[1px] h-32 bg-white/20"></div>
-<span class="text-[10px] uppercase tracking-[0.4em] font-bold text-white rotate-90 whitespace-nowrap">V 1.0.42_BUILD</span>
-</div>
-</body></html>
+                </div>
+            </div>
+        </section>
+        <!-- PHILOSOPHY (Black) -->
+        <section class="bg-on-background py-40 px-[1.4rem] md:px-[7rem] relative">
+            <div class="absolute right-0 top-0 w-1/3 h-full overflow-hidden opacity-20">
+                <img class="w-full h-full object-cover grayscale invert"
+                    data-alt="Dark abstract technical architectural wireframe pattern"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZgMUGDGmABeWWybjePGApeUlNsjja9cWUTYN0vCo4Vn-uevSg8wAZJdfZuGWWukJNG2Pxd4xnqJuhq5ZFfySEV0YPnjahh-bhFGTHpEBesYtG0FwCJDK6hn3sB0EKNEGnyGb3VzVs2j3BG3pQ-80tCQDSVnxy9KLlTcfqQqKcV-1VTdPvSwHi2AbO5C-FscWqZw5LSicqUTb3xVg0Ef8VcVLbD-KHHqzH0AL0DqvJrHZ89ctqAG6d4qDxAhlJo8P8izoTCaRsqQZf" />
+            </div>
+            <div class="relative z-10 max-w-4xl">
+                <p class="text-[11px] uppercase tracking-[0.15em] text-primary-container mb-12">THE MANIFESTO</p>
+                <div class="space-y-24">
+                    <div>
+                        <h4 class="text-white text-4xl md:text-6xl font-black tracking-tight mb-6 uppercase">Efficiency
+                            is for the weak.</h4>
+                        <p class="text-white/60 text-xl max-w-2xl">We do not automate to save time. We automate to gain
+                            scale. The time saved is reinvested into the pursuit of radical aesthetics.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white text-4xl md:text-6xl font-black tracking-tight mb-6 uppercase">Precision
+                            is the priority.</h4>
+                        <p class="text-white/60 text-xl max-w-2xl">A pixel is not a point; it is a coordinate in a vast
+                            possibility space. We navigate that space with surgical intent.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white text-4xl md:text-6xl font-black tracking-tight mb-6 uppercase">Structure
+                            is Anarchy.</h4>
+                        <p class="text-white/60 text-xl max-w-2xl">Rules exist to be broken with mathematical
+                            perfection. We embrace the grid only to defy it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA / DATA STRIP (Yellow) -->
+        <section
+            class="bg-primary-container py-20 px-[1.4rem] md:px-[7rem] flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center gap-8 mb-12 md:mb-0">
+                <div class="w-12 h-12 bg-on-background flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white" data-icon="bolt">bolt</span>
+                </div>
+                <h5 class="text-4xl font-black text-on-background uppercase tracking-tighter">Ready for the shift?</h5>
+            </div>
+            <div class="flex flex-col md:flex-row gap-4 w-full md:w-auto">
+                <button
+                    class="bg-on-background text-white px-12 py-6 text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-white hover:text-on-background transition-none">START
+                    A PROJECT</button>
+                <button
+                    class="border-2 border-on-background text-on-background px-12 py-6 text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-on-background hover:text-white transition-none">VIEW
+                    WORK</button>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full bg-[#0B0B0B] px-[1.4rem] md:px-[7rem] py-12 flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-8 md:mb-0">
+            <div class="text-lg font-black text-white mb-2">MIRAI FOUNDRY</div>
+            <p class="text-[11px] uppercase tracking-[0.15em] text-white/60">©2024 MIRAI FOUNDRY. ALL RIGHTS RESERVED.
+            </p>
+        </div>
+        <div class="flex gap-8">
+            <a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none"
+                href="#">INSTAGRAM</a>
+            <a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none"
+                href="#">TWITTER</a>
+            <a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none"
+                href="#">LINKEDIN</a>
+        </div>
+    </footer>
+    <!-- Floating Data Strip (Vertical Decor) -->
+    <div
+        class="fixed right-0 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-12 pointer-events-none mix-blend-difference">
+        <span class="text-[10px] uppercase tracking-[0.4em] font-bold text-white rotate-90 whitespace-nowrap">SYNTHETIC
+            DESIGN SYSTEMS</span>
+        <div class="w-[1px] h-32 bg-white/20"></div>
+        <span class="text-[10px] uppercase tracking-[0.4em] font-bold text-white rotate-90 whitespace-nowrap">V
+            1.0.42_BUILD</span>
+    </div>
+</body>
+
+</html>

@@ -1,72 +1,49 @@
-## Task: Initialize Git repository and push to new GitHub repository
+## Task: Adjust navigation and start local dev server
 
-### Prerequisites check
-First, verify the following tools are available:
-- `git` command
-- `gh` command (GitHub CLI)
-
-If `gh` is not installed, install it first:
-- Windows: `winget install GitHub.cli`
-- After install, run: `gh auth login` (browser-based auth)
+### Context
+Stitch で出力された複数の静的HTMLファイルが存在する。
+各ページのナビゲーションを統一・修正し、ローカルでの確認環境を立ち上げる。
 
 ---
 
-### Step 1: Ask the user for repository name
+### Step 1: Scan existing HTML files
 
-Before doing anything, ask the user:
-
-> "新しいGitHubリポジトリの名前を教えてください。
-> また、公開リポジトリ（public）にしますか？それとも非公開（private）にしますか？"
-
-Wait for the user's response before proceeding.
+List all `.html` files in the project root.
+Treat `index.html` as the reference file for navigation structure, color scheme, and hover effects.
 
 ---
 
-### Step 2: Initialize local Git repository
+### Step 2: Infer navigation items
 
-Run the following commands in the current working directory:
-```bash
-git init
-git checkout -b main
-```
+From `index.html`, extract:
+- All navigation items (labels and their linked filenames)
+- The correct display order as intended by the design
 
-If a `master` branch already exists (i.e., commits exist), rename it:
-```bash
-git branch -m master main
-```
+Use this as the single source of truth for all subsequent steps.
 
 ---
 
-### Step 3: Stage and commit
-```bash
-git add .
-git commit -m "initial commit"
-```
+### Step 3: Fix navigation across all HTML files
 
-If there is nothing to commit, skip the commit step and notify the user.
+Apply the following fixes to ALL `.html` files found in Step 1:
 
----
+1. **Structure**: Replace each file's `<nav>` with the one extracted from `index.html`
+2. **Links**: Update each nav link's `href` to point to the correct `.html` file in the project root
+3. **Active state**: If the design uses an active/current state on nav items, apply it so each page highlights its own nav item correctly
+4. **Consistency**: Color scheme and hover effects must match `index.html` exactly
 
-### Step 4: Create GitHub repository and push
-
-Using the repository name provided by the user (e.g., `REPO_NAME`) and visibility (`public` or `private`):
-```bash
-gh repo create REPO_NAME --public --source=. --remote=origin --push
-# or for private:
-gh repo create REPO_NAME --private --source=. --remote=origin --push
-```
+Do NOT modify any content outside of the `<nav>` element.
 
 ---
 
-### Step 5: Confirm success
+### Step 4: Start browser-sync
 
-After pushing, run:
+Run the following command in the project root:
+
 ```bash
-git remote -v
-git log --oneline -3
+pnpm dlx browser-sync start --server --files "**/*.html, **/*.css, **/*.js"
 ```
 
-Then report to the user:
-- The GitHub repository URL
-- The current branch name (should be `main`)
-- The latest commit hash and message
+Local URL: `http://localhost:3000`
+
+Report to the user that the server is running and file changes will auto-reload in the browser.

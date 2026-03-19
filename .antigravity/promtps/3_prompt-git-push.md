@@ -1,48 +1,72 @@
-## Task: Adjust navigation and start local dev server
+## Task: Initialize Git repository and push to new GitHub repository
 
-### Context
-Stitch で出力された複数の静的HTMLファイルが存在する。
-各ページのナビゲーションを統一・修正し、ローカルでの確認環境を立ち上げる。
+### Prerequisites check
+First, verify the following tools are available:
+- `git` command
+- `gh` command (GitHub CLI)
 
----
-
-### Step 1: Scan existing HTML files
-
-List all `.html` files in the project root.
-Treat `index.html` as the reference file for navigation structure, color scheme, and hover effects.
+If `gh` is not installed, install it first:
+- Windows: `winget install GitHub.cli`
+- After install, run: `gh auth login` (browser-based auth)
 
 ---
 
-### Step 2: Infer navigation items
+### Step 1: Ask the user for repository name
 
-From `index.html`, extract:
-- All navigation items (labels and their linked filenames)
-- The correct display order as intended by the design
+Before doing anything, ask the user:
 
-Use this as the single source of truth for all subsequent steps.
+> "新しいGitHubリポジトリの名前を教えてください。
+> また、公開リポジトリ（public）にしますか？それとも非公開（private）にしますか？"
 
----
-
-### Step 3: Fix navigation across all HTML files
-
-Apply the following fixes to ALL `.html` files found in Step 1:
-
-1. **Structure**: Replace each file's `<nav>` with the one extracted from `index.html`
-2. **Links**: Update each nav link's `href` to point to the correct `.html` file in the project root
-3. **Active state**: If the design uses an active/current state on nav items, apply it so each page highlights its own nav item correctly
-4. **Consistency**: Color scheme and hover effects must match `index.html` exactly
-
-Do NOT modify any content outside of the `<nav>` element.
+Wait for the user's response before proceeding.
 
 ---
 
-### Step 4: Start browser-sync
+### Step 2: Initialize local Git repository
 
-Run the following command in the project root:
+Run the following commands in the current working directory:
 ```bash
-pnpm dlx browser-sync start --server --files "**/*.html, **/*.css, **/*.js"
+git init
+git checkout -b main
 ```
 
-Local URL: `http://localhost:3000`
+If a `master` branch already exists (i.e., commits exist), rename it:
+```bash
+git branch -m master main
+```
 
-Report to the user that the server is running and file changes will auto-reload in the browser.
+---
+
+### Step 3: Stage and commit
+```bash
+git add .
+git commit -m "initial commit"
+```
+
+If there is nothing to commit, skip the commit step and notify the user.
+
+---
+
+### Step 4: Create GitHub repository and push
+
+Using the repository name provided by the user (e.g., `REPO_NAME`) and visibility (`public` or `private`):
+```bash
+gh repo create REPO_NAME --public --source=. --remote=origin --push
+# or for private:
+gh repo create REPO_NAME --private --source=. --remote=origin --push
+```
+
+---
+
+### Step 5: Confirm success
+
+After pushing, run:
+```bash
+git remote -v
+git log --oneline -3
+```
+
+Then report to the user:
+- The GitHub repository URL
+- The current branch name (should be `main`)
+- The latest commit hash and message

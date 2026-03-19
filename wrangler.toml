@@ -1,0 +1,7 @@
+# Cloudflare Pages Configuration
+name = "demo-static-mirai-foundry"
+compatibility_date = "2024-03-20"
+
+[build]
+command = "echo 'Static Site - No Build Needed'"
+publish = "/"

@@ -5,7 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>WORK — MIRAI FOUNDRY</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -63,9 +63,10 @@
               "tertiary-fixed-dim": "#cdc8a2"
             },
             fontFamily: {
-              "headline": ["Inter"],
-              "body": ["Inter"],
-              "label": ["Inter"]
+              "headline": ["Inter", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"],
+              "jp": ["Noto Sans JP", "sans-serif"],
             },
             borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
           },
@@ -76,7 +77,8 @@
       .material-symbols-outlined {
         font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       }
-      body { font-family: 'Inter', sans-serif; }
+      body { font-family: 'Inter', 'Noto Sans JP', sans-serif; }
+      .font-jp { font-family: 'Noto Sans JP', sans-serif; }
       .text-huge { font-size: 12vw; line-height: 0.9; letter-spacing: -0.04em; font-weight: 900; }
       .label-razor { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 400; }
       .hard-shadow { box-shadow: 16px 16px 0px #0B0B0B; }
@@ -99,12 +101,18 @@
 </nav>
 <!-- Header Section (Spatial Tension Hero) -->
 <header class="pt-48 pb-24 px-[1.4rem] md:px-[7rem] bg-primary-container">
-<div class="label-razor mb-8 text-on-primary-container">ARCHIVE / SELECTED WORKS</div>
+<div class="label-razor mb-1 text-on-primary-container">ARCHIVE / SELECTED WORKS</div>
+<div class="font-jp font-medium text-xs tracking-widest opacity-70 text-on-background mb-8">選ばれたプロジェクト群</div>
 <h1 class="text-huge text-on-background mb-12">REDEFINING<br/>DIGITAL<br/>GRAVITY</h1>
 <div class="grid grid-cols-12 gap-4">
 <div class="col-start-1 col-span-12 md:col-start-7 md:col-span-5">
-<p class="text-lg leading-relaxed text-on-background font-medium">
+<p class="text-lg leading-tight font-medium text-on-background mb-3">
                     We operate at the intersection of architectural precision and digital anarchy. Our work is a confrontation of form and function.
+                </p>
+<p class="font-jp text-sm leading-loose tracking-wide text-on-background/80">
+                    建築的精度とデジタルの無秩序が交差する場所で、<br/>
+                    私たちは制作します。すべてのプロジェクトは、<br/>
+                    形式と機能の対立から生まれます。
                 </p>
 </div>
 </div>

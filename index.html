@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#4d4632",
+              "outline": "#7f765f",
+              "primary-fixed-dim": "#eec200",
+              "outline-variant": "#d1c6ab",
+              "surface-bright": "#fcf8f8",
+              "tertiary": "#635f41",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed-variant": "#1c10e4",
+              "tertiary-fixed": "#eae4bd",
+              "surface-tint": "#725c00",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed": "#1e1c05",
+              "on-secondary-fixed": "#05006d",
+              "error-container": "#ffdad6",
+              "surface-dim": "#dcd9d9",
+              "surface-variant": "#e5e2e1",
+              "on-primary-container": "#6c5700",
+              "on-error": "#ffffff",
+              "on-tertiary-container": "#5d5a3c",
+              "background": "#fcf8f8",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "tertiary-container": "#d8d2ac",
+              "surface-container-highest": "#e5e2e1",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#eec200",
+              "secondary-fixed": "#e1e0ff",
+              "primary": "#725c00",
+              "on-secondary-container": "#deddff",
+              "surface": "#fcf8f8",
+              "primary-container": "#facc00",
+              "surface-container-high": "#ebe7e7",
+              "primary-fixed": "#ffe081",
+              "secondary-container": "#4244ff",
+              "inverse-on-surface": "#f3f0ef",
+              "on-primary-fixed": "#231b00",
+              "on-surface": "#1c1b1b",
+              "on-primary-fixed-variant": "#564500",
+              "surface-container": "#f0edec",
+              "on-background": "#1c1b1b",
+              "secondary": "#231de8",
+              "on-tertiary-fixed-variant": "#4b482b",
+              "inverse-surface": "#313030",
+              "surface-container-low": "#f6f3f2",
+              "secondary-fixed-dim": "#c0c1ff",
+              "tertiary-fixed-dim": "#cdc8a2"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcf8f8; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .hard-cut-shadow { box-shadow: 16px 16px 0px 0px #0B0B0B; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="antialiased select-none">
+<!-- Top Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-[7rem] py-6 mix-blend-difference transition-colors duration-0">
+<div class="text-2xl font-black tracking-tighter text-white">MIRAI FOUNDRY</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white hover:bg-white hover:text-[#0B0B0B] px-2 py-1" href="#work">WORK</a>
+<a class="text-[10px] uppercase tracking-[0.2em] text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1" href="#studio">STUDIO</a>
+<a class="text-[10px] uppercase tracking-[0.2em] text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1" href="#journal">JOURNAL</a>
+<a class="text-[10px] uppercase tracking-[0.2em] text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1" href="#contact">CONTACT</a>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-white">menu</span>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="min-h-screen bg-primary-container flex flex-col justify-end px-4 md:px-[7rem] pb-20 pt-32 overflow-hidden">
+<div class="relative z-10">
+<p class="text-[11px] uppercase tracking-[0.2em] font-black mb-4 text-on-background">EST. MMXXIV / TOKYO-BERLIN</p>
+<h1 class="text-[12vw] font-black tracking-[-0.04em] leading-[0.85] text-on-background uppercase">
+                Digital<br/>Artifacts<br/>Foundry
+            </h1>
+<div class="mt-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
+<p class="max-w-md text-lg leading-tight font-medium text-on-background">
+                    We construct high-fidelity digital environments and products that challenge the standard aesthetic of the modern web.
+                </p>
+<button class="bg-on-background text-surface-container-lowest px-10 py-6 text-[11px] uppercase tracking-[0.2em] font-black hover:bg-surface-container-lowest hover:text-on-background transition-none">
+                    Start a Project
+                </button>
+</div>
+</div>
+</section>
+<!-- Manifesto Section -->
+<section class="bg-[#0B0B0B] py-32 md:py-64 px-4 md:px-[7rem]">
+<div class="grid grid-cols-12 gap-0">
+<div class="col-span-12 md:col-start-4 md:col-span-8">
+<p class="text-[11px] uppercase tracking-[0.2em] text-white/50 mb-12">THE MANIFESTO</p>
+<h2 class="text-4xl md:text-7xl font-black text-white leading-tight mb-16">
+                    WE REJECT SOFTNESS. WE EMBRACE THE GRID. WE BELIEVE IN TYPOGRAPHY AS ARCHITECTURE. NO RADIUS. NO BLURS. ONLY PRECISION.
+                </h2>
+<div class="w-24 h-2 bg-primary-container"></div>
+</div>
+</div>
+</section>
+<!-- Process Section (Electric Blue) -->
+<section class="bg-secondary py-32 px-4 md:px-[7rem]">
+<div class="mb-24 flex justify-between items-start">
+<h2 class="text-[8vw] font-black tracking-tight text-white leading-none">PROCESS</h2>
+<p class="text-[11px] uppercase tracking-[0.2em] text-white/70 text-right">01 — 05</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-1 gap-x-0 md:gap-x-12">
+<!-- Step 01 -->
+<div class="md:col-span-4 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none">
+<p class="text-6xl font-black mb-8">01</p>
+<p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-4">Discovery</p>
+<p class="text-sm leading-relaxed opacity-70 group-hover:opacity-100">Aggressive research phase into market dynamics and brand DNA.</p>
+</div>
+<!-- Step 02 -->
+<div class="md:col-start-7 md:col-span-5 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none mt-12">
+<p class="text-6xl font-black mb-8">02</p>
+<p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-4">Brutalism</p>
+<p class="text-sm leading-relaxed opacity-70 group-hover:opacity-100">Structural integrity defines our wireframes. No fluff allowed.</p>
+</div>
+<!-- Step 03 -->
+<div class="md:col-span-6 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none mt-4">
+<p class="text-6xl font-black mb-8">03</p>
+<p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-4">Forging</p>
+<p class="text-sm leading-relaxed opacity-70 group-hover:opacity-100">Visual development using the kinetic grid system.</p>
+</div>
+<!-- Step 04 -->
+<div class="md:col-start-8 md:col-span-4 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none mt-20">
+<p class="text-6xl font-black mb-8">04</p>
+<p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-4">Logic</p>
+<p class="text-sm leading-relaxed opacity-70 group-hover:opacity-100">Technical implementation with zero-latency protocols.</p>
+</div>
+<!-- Step 05 -->
+<div class="md:col-span-3 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none mt-8">
+<p class="text-6xl font-black mb-8">05</p>
+<p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-4">Impact</p>
+<p class="text-sm leading-relaxed opacity-70 group-hover:opacity-100">Global deployment and performance monitoring.</p>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="bg-tertiary-fixed py-32 px-4 md:px-[7rem]">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-5">
+<p class="text-[11px] uppercase tracking-[0.2em] font-black mb-8 text-on-tertiary-fixed">CAPABILITIES</p>
+<h3 class="text-6xl font-black text-on-tertiary-fixed leading-[0.9] tracking-tighter">VERSATILE<br/>PRECISION</h3>
+</div>
+<div class="md:col-span-7 flex flex-col gap-1">
+<div class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
+<span class="text-2xl font-black">BRAND IDENTITY</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+<div class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
+<span class="text-2xl font-black">UI/UX SYSTEMS</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+<div class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
+<span class="text-2xl font-black">MOTION DESIGN</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+<div class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
+<span class="text-2xl font-black">WEB3 FORGING</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+<div class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
+<span class="text-2xl font-black">AI INTEGRATION</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Works Preview -->
+<section class="bg-surface-container-lowest py-32 px-4 md:px-[7rem]" id="work">
+<p class="text-[11px] uppercase tracking-[0.2em] font-black mb-16 text-on-background">SELECTED ARTIFACTS</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+<!-- Card 1 (Yellow) -->
+<div class="bg-primary-container p-12 aspect-[4/5] flex flex-col justify-between hover:-translate-y-4 transition-transform cursor-pointer group">
+<div class="flex justify-between items-start">
+<p class="text-[10px] font-black uppercase tracking-widest text-on-background">SYSTEM 01</p>
+<span class="material-symbols-outlined text-on-background opacity-0 group-hover:opacity-100">north_east</span>
+</div>
+<div>
+<h4 class="text-4xl font-black text-on-background mb-4">KINETIC ENGINE</h4>
+<p class="text-[11px] uppercase tracking-widest text-on-background/60">AUTOMOTIVE / INTERFACE</p>
+</div>
+</div>
+<!-- Card 2 (Blue) -->
+<div class="bg-secondary p-12 aspect-[4/5] flex flex-col justify-between md:translate-y-16 hover:translate-y-12 transition-transform cursor-pointer group">
+<div class="flex justify-between items-start">
+<p class="text-[10px] font-black uppercase tracking-widest text-white">SYSTEM 02</p>
+<span class="material-symbols-outlined text-white opacity-0 group-hover:opacity-100">north_east</span>
+</div>
+<div>
+<h4 class="text-4xl font-black text-white mb-4">NEON VAULT</h4>
+<p class="text-[11px] uppercase tracking-widest text-white/60">FINTECH / CRYPTO</p>
+</div>
+</div>
+<!-- Card 3 (Warm White) -->
+<div class="bg-tertiary-fixed p-12 aspect-[4/5] flex flex-col justify-between hover:-translate-y-4 transition-transform cursor-pointer group">
+<div class="flex justify-between items-start">
+<p class="text-[10px] font-black uppercase tracking-widest text-on-tertiary-fixed">SYSTEM 03</p>
+<span class="material-symbols-outlined text-on-tertiary-fixed opacity-0 group-hover:opacity-100">north_east</span>
+</div>
+<div>
+<h4 class="text-4xl font-black text-on-tertiary-fixed mb-4">OASIS PROTOCOL</h4>
+<p class="text-[11px] uppercase tracking-widest text-on-tertiary-fixed/60">LIFESTYLE / WEB3</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="bg-[#0B0B0B] py-32 md:py-64 px-4 md:px-[7rem] overflow-hidden relative">
+<div class="relative z-10">
+<h2 class="text-[10vw] font-black text-white leading-none tracking-tighter mb-20 uppercase">
+                Ready to<br/>Confront the<br/>Standard?
+            </h2>
+<div class="flex flex-col md:flex-row gap-1">
+<button class="bg-primary-container text-on-background px-16 py-8 text-[11px] uppercase tracking-[0.2em] font-black hover:bg-white transition-none">
+                    Initiate Sequence
+                </button>
+<button class="border-2 border-white text-white px-16 py-8 text-[11px] uppercase tracking-[0.2em] font-black hover:bg-white hover:text-black transition-none">
+                    View Journal
+                </button>
+</div>
+</div>
+<div class="absolute right-0 bottom-0 opacity-10 pointer-events-none">
+<span class="text-[30vw] font-black text-white leading-none tracking-tighter select-none">MIRAI</span>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full bg-[#0B0B0B] px-4 md:px-[7rem] py-12 flex flex-col md:flex-row justify-between items-center border-t border-white/10">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-black text-white mb-2">MIRAI FOUNDRY</div>
+<p class="text-[11px] uppercase tracking-[0.15em] text-white/40">©2024 MIRAI FOUNDRY. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex gap-12">
+<a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none" href="#">INSTAGRAM</a>
+<a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none" href="#">TWITTER</a>
+<a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none" href="#">LINKEDIN</a>
+</div>
+</footer>
+<!-- Data-Strip Overlay (Signature Component) -->
+<div class="fixed right-0 top-1/2 -rotate-90 origin-right translate-x-[calc(50%-12px)] hidden lg:block z-50">
+<div class="bg-on-background text-primary-container px-6 py-2 flex items-center gap-4">
+<span class="text-[10px] uppercase tracking-[0.2em] font-black">LATENCY: 12MS</span>
+<div class="w-2 h-2 bg-primary-container animate-pulse"></div>
+<span class="text-[10px] uppercase tracking-[0.2em] font-black">SYSTEM STATUS: ACTIVE</span>
+</div>
+</div>
+</body></html>

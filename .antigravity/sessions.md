@@ -12,6 +12,13 @@ Read this file at the START of every session before taking any action.
 
 ---
 
+### [2026-03-20 Session 4] DevTools Mobile Emulation Fix (overflow-x on body)
+- **Learned/Decided**: `overflow-x: hidden` on `<body>` breaks `position: fixed` hit-testing in mobile browsers and DevTools emulation. Only works.html and contact.html had this — index.html and about.html did not, which explained why only 2 of 4 pages were broken. Fixed by moving the class to `<html>` and adding `touchstart` fallback to menu.js.
+- **Preferences**: Azuma tests on DevTools mobile emulation as the primary mobile check method.
+- **Plan Impact**: The rule is now canonical: always use `overflow-x-hidden` on `<html>`, never on `<body>`. Added to bug-history.md.
+
+---
+
 ### [2026-03-20 Session 2] Tailwind CDN classList Anti-Pattern Fix
 - **Learned/Decided**: After the initial menu fix, the menu still didn't open on mobile. Root cause: Tailwind Play CDN generates CSS at load time by scanning the DOM — it does NOT respond to JS `classList` changes at runtime. `classList.remove('translate-x-full')` had no reliable visual effect. Fixed by rewriting `menu.js` to use `element.style.transform` directly, and setting the overlay's initial hidden state via inline `style` attribute rather than a Tailwind class.
 - **Preferences**: Azuma wants bugs documented in both `bug-history.md` AND `sessions.md` immediately after fixing. Also wants `rules.md` updated so successor agents don't repeat the same mistake — even across different projects.

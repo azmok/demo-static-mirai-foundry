@@ -26,6 +26,13 @@ Append a new entry immediately after every bug fix — no matter how small.
 - **Fix Summary**: Reverted all internal links in both desktop and mobile navigation to include the `.html` extension and use relative paths (e.g., `about.html`).
 - **Prevention Note**: Always use the full file extension for internal links in pure static HTML projects to ensure compatibility across all environments.
 
+### [2026-03-20 02:00] Bug: Mobile menu broken in DevTools emulation on works.html and contact.html
+- **Error**: Hamburger button tap had no effect specifically in DevTools mobile emulation (iPhone/Android view). Desktop narrow-window resize worked fine. Only works.html and contact.html were affected; index.html and about.html worked correctly.
+- **Root Cause**: `overflow-x: hidden` was set on `<body>` in works.html and contact.html (not on index.html/about.html). In mobile browsers and DevTools mobile emulation, `body { overflow: hidden }` creates a new scroll container. `position: fixed` elements (including the hamburger button in the nav) have their hit-test regions calculated against this body container instead of the viewport, causing taps to miss the button's actual click area. Secondary issue: menu.js used only `click` event with no `touchstart` fallback.
+- **File(s) Modified**: `works.html`, `contact.html`, `menu.js`
+- **Fix Summary**: Moved `overflow-x-hidden` from `<body>` to `<html>` in works.html and contact.html. Added `touchstart` handler (with `e.preventDefault()` to prevent ghost clicks) alongside existing `click` handler in menu.js via `addTapHandler()` helper.
+- **Prevention Note**: NEVER put `overflow: hidden` or `overflow-x: hidden` on `<body>`. Always put it on `<html>` instead. `body { overflow: hidden }` breaks `position: fixed` hit-testing in mobile browsers and DevTools emulation. See updated rules.md §9.
+
 <!-- No entries yet. Add entries in the format below as bugs are discovered and fixed. -->
 
 <!--

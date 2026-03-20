@@ -167,7 +167,27 @@ CRITICAL: Before any action, you MUST read and strictly adhere to the global pro
 
 > **This checklist was born from two real bugs on this project. Do not skip it.**
 
-### 9-A. ⚠️ Tailwind Play CDN + JavaScript — CRITICAL Anti-Pattern
+### 9-A. ⚠️ overflow-x:hidden on body — CRITICAL Anti-Pattern
+
+**NEVER put `overflow-x-hidden` (or any `overflow: hidden`) on `<body>`. Always put it on `<html>`.**
+
+- **Why**: In mobile browsers and DevTools mobile emulation, `body { overflow: hidden }` creates a new scroll container. `position: fixed` elements (nav, overlays) have their hit-test areas calculated against the body container instead of the viewport — taps miss the button even though it looks correct visually.
+- **Telltale symptom**: "Works on desktop resize, broken in DevTools iPhone/Android emulation."
+- **Fix**: Use `overflow-x-hidden` on `<html>` only.
+
+```html
+<!-- ✅ CORRECT -->
+<html class="scroll-smooth overflow-x-hidden">
+<body class="...">
+
+<!-- ❌ WRONG — breaks fixed element hit-testing on mobile -->
+<html class="scroll-smooth">
+<body class="... overflow-x-hidden">
+```
+
+---
+
+### 9-B. ⚠️ Tailwind Play CDN + JavaScript — CRITICAL Anti-Pattern
 
 **NEVER use Tailwind CSS classes to control element visibility or position via JavaScript on this project.**
 
@@ -230,3 +250,12 @@ npx wrangler pages deploy . --project-name YOUR_PROJECT_NAME
 ```
 
 
+## ✅ MANDATORY SESSION CLOSE CHECKLIST
+> You MUST complete ALL of the following before declaring any task done.
+> If any item is skipped, the task is NOT complete.
+
+- [ ] `git add .` → `git diff --cached` → `git commit` with Japanese summary
+- [ ] Append to `.antigravity/sessions.md`
+- [ ] If a bug was fixed → Append to `.antigravity/bug-history.md`
+- [ ] If nav menu was touched → Run Section 9 checklist
+- [ ] Report completion summary to Azuma in Japanese, in a clear and user-friendly format (what was done, what was changed, and any next steps if applicable)

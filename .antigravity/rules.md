@@ -151,16 +151,35 @@ CRITICAL: Before any action, you MUST read and strictly adhere to the global pro
 
 ## 9. Navigation Menu Check (REQUIRED)
 
-**Whenever a page has a navigation menu, you MUST verify all of the following before completing any task:**
+**Whenever a page has a navigation menu, you MUST verify ALL of the following before closing any task:**
 
-1. **Mobile menu button** (`id="mobile-menu-open"`) exists on every HTML page.
-2. **Mobile menu overlay** (`id="mobile-menu"`) with `translate-x-full` class exists on every HTML page.
-3. **Close button** (`id="mobile-menu-close"`) exists inside the overlay on every page.
-4. **`menu.js` is loaded** via `<script src="./menu.js"></script>` before `</body>` on every page.
-5. **All nav links** use root-relative paths (`/`, `/about`, `/works`, `/contact`) — NOT `./filename.html`.
-6. **Confirm toggle works**: open button shows menu, close button and link clicks hide menu.
+1. **Hamburger button** — `id="mobile-menu-open"` exists on every HTML page inside the `<nav>`. Visible only on mobile (`md:hidden`).
+2. **Mobile menu overlay** — `id="mobile-menu"` exists on every HTML page. Initial hidden state set via **inline style** (`style="... transform: translateX(100%); ..."`), NOT a Tailwind class.
+3. **Close button** — `id="mobile-menu-close"` exists inside the overlay on every page.
+4. **`menu.js` loaded** — `<script src="./menu.js"></script>` appears before `</body>` on every page.
+5. **JS uses inline styles** — `menu.js` must control show/hide via `element.style.transform`, NOT `classList.add/remove`. See §9-A below.
+6. **Nav links use root-relative paths** — `/`, `/works`, `/about`, `/contact`. NEVER `./filename.html`.
+7. **End-to-end verification** — confirm open button shows menu, close button and link clicks hide it, on mobile viewport.
 
-> Failure to check these items has caused broken mobile navigation in the past. Always verify end-to-end.
+> **This checklist was born from two real bugs on this project. Do not skip it.**
+
+### 9-A. ⚠️ Tailwind Play CDN + JavaScript — CRITICAL Anti-Pattern
+
+**NEVER use Tailwind CSS classes to control element visibility or position via JavaScript on this project.**
+
+- **Why**: Tailwind Play CDN generates CSS by scanning the HTML at load time. It does NOT react to JavaScript `classList` changes. If JS removes a class like `translate-x-full`, the CDN-generated CSS for that class remains in the stylesheet — the visual change may not occur reliably, especially on mobile.
+- **Rule**: Any CSS property that JavaScript needs to change MUST be set via **inline style** (`element.style.property = value`).
+- **Initial hidden state**: Set via `style="transform: translateX(100%)"` in the HTML attribute — do not rely on Tailwind classes for initial off-screen positioning when JS will later change it.
+
+```javascript
+// ✅ CORRECT — use inline style
+menu.style.transform = 'translateX(0)';
+menu.style.transform = 'translateX(100%)';
+
+// ❌ WRONG — do not use classList with Tailwind CDN for JS-toggled properties
+menu.classList.remove('translate-x-full');
+menu.classList.add('translate-x-full');
+```
 
 ---
 
@@ -175,33 +194,23 @@ CRITICAL: Before any action, you MUST read and strictly adhere to the global pro
 ## 11. Reusable Prompt Templates
 - Always check `.antigravity/notouch.md` for scope-lock templates before starting any task.
 
-
-
-
-
-## Task: Deploy static site to Cloudflare Pages
-
-This is a plain static site (HTML/CSS/JS only, no framework).
-
-### Step 1: Verify project structure
-
-Confirm the following files exist in the project root:
-- `index.html`
-- Any additional `.html`, `.css`, `.js` files
-
-Do NOT run any build command. The project root is the deploy target as-is.
-
 ---
 
-### Step 2: Create required Cloudflare config files
+## Appendix A: Deploy Static Site to Cloudflare Pages (Reference Runbook)
 
-Create `_headers` in the project root if it doesn't exist:
+> This is a reference runbook for initial deployment. For ongoing deploys, push to `main` — GitHub Actions handles the rest (see §7).
+
+### Step 1: Verify project structure
+Confirm files exist in the project root: `index.html`, plus any `.html`, `.css`, `.js` files.
+Do NOT run any build command. The project root is the deploy target as-is.
+
+### Step 2: Required Cloudflare config files
+Create `_headers` if it doesn't exist:
 ```
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
 ```
-
 Create `.gitignore` if it doesn't exist:
 ```
 .DS_Store
@@ -209,43 +218,11 @@ Thumbs.db
 node_modules/
 ```
 
----
-
-### Step 3: Commit config files
-```bash
-git add .
-git commit -m "add Cloudflare config files"
-git push origin main
-```
-
----
-
-### Step 4: Deploy via Wrangler CLI
-
-Install wrangler if not available:
-```bash
-pnpm add -D wrangler
-```
-
-Ensure Node.js v20 is active:
+### Step 3: Deploy via Wrangler CLI (fallback)
 ```bash
 fnm install 20 && fnm use 20
-```
-
-Deploy the project root directly:
-```bash
+pnpm add -D wrangler
 npx wrangler pages deploy . --project-name YOUR_PROJECT_NAME
 ```
-
-Replace `YOUR_PROJECT_NAME` with the Cloudflare Pages project name.
-If the project doesn't exist yet, Wrangler will prompt to create it.
-
----
-
-### Step 5: Confirm success
-
-Report to the user:
-- The Cloudflare Pages URL
-- Deployment status
 
 

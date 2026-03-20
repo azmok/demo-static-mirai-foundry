@@ -149,7 +149,22 @@ CRITICAL: Before any action, you MUST read and strictly adhere to the global pro
 
 ---
 
-## 9. Clarify Ambiguity Before Acting
+## 9. Navigation Menu Check (REQUIRED)
+
+**Whenever a page has a navigation menu, you MUST verify all of the following before completing any task:**
+
+1. **Mobile menu button** (`id="mobile-menu-open"`) exists on every HTML page.
+2. **Mobile menu overlay** (`id="mobile-menu"`) with `translate-x-full` class exists on every HTML page.
+3. **Close button** (`id="mobile-menu-close"`) exists inside the overlay on every page.
+4. **`menu.js` is loaded** via `<script src="./menu.js"></script>` before `</body>` on every page.
+5. **All nav links** use root-relative paths (`/`, `/about`, `/works`, `/contact`) — NOT `./filename.html`.
+6. **Confirm toggle works**: open button shows menu, close button and link clicks hide menu.
+
+> Failure to check these items has caused broken mobile navigation in the past. Always verify end-to-end.
+
+---
+
+## 10. Clarify Ambiguity Before Acting
 - **Never assume. Always ask first.**
 - State what is unclear and why it matters.
 - Ask one or two focused questions only.
@@ -157,7 +172,7 @@ CRITICAL: Before any action, you MUST read and strictly adhere to the global pro
 
 ---
 
-## 10. Reusable Prompt Templates
+## 11. Reusable Prompt Templates
 - Always check `.antigravity/notouch.md` for scope-lock templates before starting any task.
 
 

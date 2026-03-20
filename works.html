@@ -90,12 +90,12 @@
 <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[1.4rem] md:px-[7rem] py-6 mix-blend-difference transition-colors duration-0">
 <div class="text-2xl font-black tracking-tighter text-white">MIRAI FOUNDRY</div>
 <div class="hidden md:flex gap-12 items-center">
-<a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1 transition-none" href="./index.html">HOME</a>
-<a class="text-[10px] uppercase tracking-[0.2em] font-black text-[#0B0B0B] bg-white px-2 py-1 transition-none" href="./works.html">WORKS</a>
-<a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1 transition-none" href="./about.html">ABOUT</a>
-<a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1 transition-none" href="./contact.html">CONTACT</a>
+<a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1 transition-none" href="/">HOME</a>
+<a class="text-[10px] uppercase tracking-[0.2em] font-black text-[#0B0B0B] bg-white px-2 py-1 transition-none" href="/works">WORKS</a>
+<a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1 transition-none" href="/about">ABOUT</a>
+<a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1 transition-none" href="/contact">CONTACT</a>
 </div>
-<button class="md:hidden">
+<button id="mobile-menu-open" class="md:hidden focus:outline-none">
 <span class="material-symbols-outlined text-white">menu</span>
 </button>
 </nav>
@@ -215,4 +215,22 @@
 <div class="fixed right-0 top-0 h-full w-8 hidden md:flex flex-col items-center justify-center pointer-events-none z-40">
 <div class="label-razor origin-center rotate-90 whitespace-nowrap text-on-background/20">MIRAI_FOUNDRY_SYSTEMS</div>
 </div>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-[#0B0B0B] translate-x-full" style="transition: transform 0.3s ease;">
+    <div class="flex flex-col h-full px-[1.4rem] py-6">
+        <div class="flex justify-between items-center mb-16">
+            <div class="text-2xl font-black tracking-tighter text-white">MIRAI FOUNDRY</div>
+            <button id="mobile-menu-close" class="text-white focus:outline-none">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-8">
+            <a class="text-4xl font-black text-white/60 uppercase tracking-tighter hover:text-white" href="/">HOME</a>
+            <a class="text-4xl font-black text-white uppercase tracking-tighter" href="/works">WORKS</a>
+            <a class="text-4xl font-black text-white/60 uppercase tracking-tighter hover:text-white" href="/about">ABOUT</a>
+            <a class="text-4xl font-black text-white/60 uppercase tracking-tighter hover:text-white" href="/contact">CONTACT</a>
+        </nav>
+    </div>
+</div>
+<script src="./menu.js"></script>
 </body></html>

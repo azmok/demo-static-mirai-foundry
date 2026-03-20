@@ -105,15 +105,15 @@
         <div class="text-2xl font-black tracking-tighter text-white">MIRAI FOUNDRY</div>
         <div class="hidden md:flex gap-12 items-center">
             <a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-black transition-none px-2 py-1"
-                href="./index.html">HOME</a>
+                href="/">HOME</a>
             <a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-black transition-none px-2 py-1"
-                href="./works.html">WORKS</a>
+                href="/works">WORKS</a>
             <a class="text-[10px] uppercase tracking-[0.2em] font-black text-black bg-white px-2 py-1 transition-none"
-                href="./about.html">ABOUT</a>
+                href="/about">ABOUT</a>
             <a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-black transition-none px-2 py-1"
-                href="./contact.html">CONTACT</a>
+                href="/contact">CONTACT</a>
         </div>
-        <button class="md:hidden text-white"><span class="material-symbols-outlined">menu</span></button>
+        <button id="mobile-menu-open" class="md:hidden text-white focus:outline-none"><span class="material-symbols-outlined">menu</span></button>
     </nav>
     <main>
         <section
@@ -302,6 +302,24 @@
         <span class="text-[10px] uppercase tracking-[0.4em] font-bold text-white rotate-90 whitespace-nowrap">V
             1.0.42_BUILD</span>
     </div>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-[#0B0B0B] translate-x-full" style="transition: transform 0.3s ease;">
+    <div class="flex flex-col h-full px-[1.4rem] py-6">
+        <div class="flex justify-between items-center mb-16">
+            <div class="text-2xl font-black tracking-tighter text-white">MIRAI FOUNDRY</div>
+            <button id="mobile-menu-close" class="text-white focus:outline-none">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-8">
+            <a class="text-4xl font-black text-white/60 uppercase tracking-tighter hover:text-white" href="/">HOME</a>
+            <a class="text-4xl font-black text-white/60 uppercase tracking-tighter hover:text-white" href="/works">WORKS</a>
+            <a class="text-4xl font-black text-white uppercase tracking-tighter" href="/about">ABOUT</a>
+            <a class="text-4xl font-black text-white/60 uppercase tracking-tighter hover:text-white" href="/contact">CONTACT</a>
+        </nav>
+    </div>
+</div>
+<script src="./menu.js"></script>
 </body>
 
 </html>

@@ -81,19 +81,7 @@
         .text-huge { font-size: 12vw; line-height: 0.9; letter-spacing: -0.04em; }
         .label-technical { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; }
         input:focus, textarea:focus { outline: none; }
-        #diagnostic-overlay { position: fixed; bottom: 0; left: 0; background: rgba(0,0,0,0.8); color: lime; font-size: 10px; z-index: 1000; padding: 4px; pointer-events: none; }
     </style>
-    <script>
-      window.addEventListener('load', () => {
-        const diag = document.createElement('div');
-        diag.id = 'diagnostic-overlay';
-        document.body.appendChild(diag);
-        setInterval(() => {
-          const btn = document.getElementById('mobile-menu-open');
-          diag.textContent = `Viewport: ${window.innerWidth}px | Btn: ${btn ? getComputedStyle(btn).display : 'Missing'}`;
-        }, 500);
-      });
-    </script>
 </head>
 <body class="bg-primary-container text-on-background m-0 p-0 antialiased">
 <!-- TopNavBar Navigation Shell -->

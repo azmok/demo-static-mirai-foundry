@@ -5,10 +5,10 @@ Read this file at the START of every session before taking any action.
 
 ---
 
-### [2026-03-20 Session 3] Dev Server Setup & Nav Link Repair
-- **Learned/Decided**: Added `browser-sync` for hot-reload dev server as pnpm dev dependency. Verified all internal links were broken due to missing `.html` extensions and corrected them across all 4 pages.
-- **Preferences**: Azuma wants a local dev environment with hot-reload. `package.json` was created to manage the `dev` and `start` scripts.
-- **Plan Impact**: Local development is now streamlined with `pnpm dev`. All internal navigation must strictly use `.html` extensions for static compatibility.
+### [2026-03-20 Session 4] Mobile Menu Visibility & Event Handling
+- **Learned/Decided**: Standardized `viewport` meta tags in all HTML files. Found that Chrome's mobile emulation can be sensitive to meta tag syntax and attribute order. Added `touchstart` event support in `menu.js` (User change) to ensure compatibility with touch devices where `click` events might be delayed or blocked.
+- **Preferences**: Azuma confirmed that the menu is now functional. Diagnostic scripts were used and then removed.
+- **Plan Impact**: Future mobile features must include `touchstart` support and strict `viewport` meta tag compliance.
 
 ---
 

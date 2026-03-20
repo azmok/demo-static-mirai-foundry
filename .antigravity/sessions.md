@@ -5,6 +5,13 @@ Read this file at the START of every session before taking any action.
 
 ---
 
+### [2026-03-20 Session 3] Dev Server Setup & Nav Link Repair
+- **Learned/Decided**: Added `browser-sync` for hot-reload dev server as pnpm dev dependency. Verified all internal links were broken due to missing `.html` extensions and corrected them across all 4 pages.
+- **Preferences**: Azuma wants a local dev environment with hot-reload. `package.json` was created to manage the `dev` and `start` scripts.
+- **Plan Impact**: Local development is now streamlined with `pnpm dev`. All internal navigation must strictly use `.html` extensions for static compatibility.
+
+---
+
 ### [2026-03-20 Session 2] Tailwind CDN classList Anti-Pattern Fix
 - **Learned/Decided**: After the initial menu fix, the menu still didn't open on mobile. Root cause: Tailwind Play CDN generates CSS at load time by scanning the DOM — it does NOT respond to JS `classList` changes at runtime. `classList.remove('translate-x-full')` had no reliable visual effect. Fixed by rewriting `menu.js` to use `element.style.transform` directly, and setting the overlay's initial hidden state via inline `style` attribute rather than a Tailwind class.
 - **Preferences**: Azuma wants bugs documented in both `bug-history.md` AND `sessions.md` immediately after fixing. Also wants `rules.md` updated so successor agents don't repeat the same mistake — even across different projects.

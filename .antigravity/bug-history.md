@@ -19,6 +19,13 @@ Append a new entry immediately after every bug fix — no matter how small.
 - **Fix Summary**: Rewrote `menu.js` to use `element.style.transform` directly instead of Tailwind class toggling. Changed overlay HTML from `class="... translate-x-full"` + external transition to `style="z-index:200; transform: translateX(100%); transition: transform 0.3s ease;"` so initial state and all JS transitions are purely inline-style-driven, independent of Tailwind CDN.
 - **Prevention Note**: On any project using Tailwind Play CDN, NEVER use Tailwind classes for JS-toggled CSS properties. Always use inline styles (`element.style.X = value`). See rules.md §9-A for the canonical rule.
 
+### [2026-03-20 18:30] Bug: Internal navigation links missing .html extension
+- **Error**: Navigating to sections from any page resulted in 404 or broken paths because the `.html` extension was missing.
+- **Root Cause**: All internal links were previously erroneously changed to root-relative paths without extensions (e.g., `/about` instead of `about.html`), which doesn't work for this static file structure on local dev or standard static hosting.
+- **File(s) Modified**: `index.html`, `about.html`, `works.html`, `contact.html`
+- **Fix Summary**: Reverted all internal links in both desktop and mobile navigation to include the `.html` extension and use relative paths (e.g., `about.html`).
+- **Prevention Note**: Always use the full file extension for internal links in pure static HTML projects to ensure compatibility across all environments.
+
 <!-- No entries yet. Add entries in the format below as bugs are discovered and fixed. -->
 
 <!--

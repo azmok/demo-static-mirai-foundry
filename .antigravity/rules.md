@@ -140,7 +140,11 @@ CRITICAL: Before any action, you MUST read and strictly adhere to the global pro
 
 ---
 
-## 8. Auto-Commit Protocol
+## 8. Auto-Commit Protocol (CRITICAL)
+
+> [!IMPORTANT]
+> **MANDATORY AUTO-COMMIT**: You MUST perform a `git commit` immediately after every successful feature implementation or bug fix. Do not wait until the end of the session.
+
 1. `git add .`
 2. `git diff --cached`
 3. Summarize changes in Japanese

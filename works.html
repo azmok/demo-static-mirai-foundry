@@ -83,7 +83,19 @@
       .label-razor { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 400; }
       .hard-shadow { box-shadow: 16px 16px 0px #0B0B0B; }
       .hard-shadow-white { box-shadow: 16px 16px 0px #FFFFFF; }
+      #diagnostic-overlay { position: fixed; bottom: 0; left: 0; background: rgba(0,0,0,0.8); color: lime; font-size: 10px; z-index: 1000; padding: 4px; pointer-events: none; }
     </style>
+    <script>
+      window.addEventListener('load', () => {
+        const diag = document.createElement('div');
+        diag.id = 'diagnostic-overlay';
+        document.body.appendChild(diag);
+        setInterval(() => {
+          const btn = document.getElementById('mobile-menu-open');
+          diag.textContent = `Viewport: ${window.innerWidth}px | Btn: ${btn ? getComputedStyle(btn).display : 'Missing'}`;
+        }, 500);
+      });
+    </script>
 </head>
 <body class="bg-surface text-on-background selection:bg-secondary selection:text-white">
 <!-- TopNavBar -->
@@ -95,9 +107,9 @@
 <a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1 transition-none" href="about.html">ABOUT</a>
 <a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1 transition-none" href="contact.html">CONTACT</a>
 </div>
-<button id="mobile-menu-open" class="md:hidden text-white focus:outline-none">
-<span class="material-symbols-outlined">menu</span>
-</button>
+        <button id="mobile-menu-open" class="md:hidden text-white focus:outline-none flex items-center">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
 </nav>
 <!-- Header Section (Spatial Tension Hero) -->
 <header class="pt-48 pb-24 px-[1.4rem] md:px-[7rem] bg-primary-container">

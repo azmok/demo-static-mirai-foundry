@@ -40,6 +40,13 @@ Append a new entry immediately after every bug fix — no matter how small.
 - **Fix Summary**: Added `packageManager: npm` and explicit `env:` block to workflow. Set `CLOUDFLARE_ACCOUNT_ID` secret. Replaced Global API Key with a proper Cloudflare API Token (created via API Tokens → Edit Cloudflare Pages template).
 - **Prevention Note**: `CLOUDFLARE_API_TOKEN` must be a **scoped API Token** from https://dash.cloudflare.com/profile/api-tokens (use "Edit Cloudflare Pages" template). Global API Keys do NOT work with wrangler. Always verify secrets are non-empty in the Actions log (`***` means set, blank means missing).
 
+### [2026-03-20 04:00] Bug: wrangler deploy creates preview deployments instead of updating production URL
+- **Error**: Each `wrangler pages deploy . --project-name=X` created a unique hash URL (e.g. `a090147d.demo-static-mirai-foundry.pages.dev`) without updating the canonical production URL `demo-static-mirai-foundry.pages.dev`.
+- **Root Cause**: The `--branch` flag was missing from the deploy command. Without `--branch=main`, wrangler has no way to associate the deployment with the production branch, so Cloudflare Pages treats it as an unassociated preview deployment.
+- **File(s) Modified**: `.github/workflows/deploy.yml`
+- **Fix Summary**: Added `--branch=main` to the wrangler pages deploy command. Now all deploys from GitHub Actions update `https://demo-static-mirai-foundry.pages.dev` directly.
+- **Prevention Note**: The deploy command MUST be `pages deploy . --project-name=<name> --branch=main`. Without `--branch=main`, every deploy generates a new random URL. See rules.md §5-A.
+
 <!-- No entries yet. Add entries in the format below as bugs are discovered and fixed. -->
 
 <!--

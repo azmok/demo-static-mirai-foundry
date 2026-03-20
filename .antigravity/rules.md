@@ -59,8 +59,11 @@ CRITICAL: Before any action, you MUST read and strictly adhere to the global pro
 
 ### 5-A. Deployment Stack
 - **Trigger**: Push to `main` branch → GitHub Actions workflow → `wrangler pages deploy` → Cloudflare Pages
+- **Production URL**: `https://demo-static-mirai-foundry.pages.dev` — this is the ONE canonical URL. Do not reference hash-based or branch-prefixed URLs (e.g. `c55f4ae1.demo-static-mirai-foundry.pages.dev`).
+- **Required deploy command**: `pages deploy . --project-name=demo-static-mirai-foundry --branch=main`  — the `--branch=main` flag is MANDATORY. Without it, wrangler creates isolated preview deployments instead of updating the production URL.
 - **Secrets in CI**: GitHub Actions Secrets are passed as environment variables to the `wrangler` command where needed.
 - **Secrets at Runtime**: Static HTML cannot read server-side secrets. Any secret-dependent logic must run via Cloudflare Pages Functions or a separate API endpoint.
+- **Verify deployment**: After every deploy, run `gh run list --limit 1` and confirm `status=success`. Then check `https://demo-static-mirai-foundry.pages.dev` directly.
 
 ### 5-B. Known Error Patterns & Fixes
 

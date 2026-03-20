@@ -5,6 +5,13 @@ Read this file at the START of every session before taking any action.
 
 ---
 
+### [2026-03-20 Session 6] デプロイURL統一 — --branch=main 追加
+- **Learned/Decided**: wrangler deploy コマンドに `--branch=main` がないと毎回ランダムなhash URLが生成され、本番URL（`demo-static-mirai-foundry.pages.dev`）が更新されない。`--branch=main` を追加することで全デプロイが本番URLに反映されるようになった。
+- **Preferences**: Azumaはデプロイ先URLを1本（`demo-static-mirai-foundry.pages.dev`）に統一したい。hash URLや branch prefix URLは参照しないこと。
+- **Plan Impact**: 今後の全 `wrangler pages deploy` コマンドには必ず `--branch=main` を含めること。rules.md §5-A に明記済み。
+
+---
+
 ### [2026-03-20 Session 5] GitHub Actions CI/CD 修復・デプロイ成功
 - **Learned/Decided**: GitHub Actions が全 run で failure していた。原因は2段階: (1) wrangler-action@v3 が pnpm を探すが CI 環境にない → `packageManager: npm` で解決。(2) `CLOUDFLARE_API_TOKEN` シークレットが未設定、その後 Global API Key を誤投入 → Cloudflare API Token（`cfut_` prefix、Edit Cloudflare Pages 権限）に差し替えで解決。
 - **Preferences**: デプロイ確認は `gh run list --limit 1` で status=success を必ず確認すること。

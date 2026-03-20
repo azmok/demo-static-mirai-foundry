@@ -5,6 +5,13 @@ Read this file at the START of every session before taking any action.
 
 ---
 
+### [2026-03-20 Session 5] GitHub Actions CI/CD 修復・デプロイ成功
+- **Learned/Decided**: GitHub Actions が全 run で failure していた。原因は2段階: (1) wrangler-action@v3 が pnpm を探すが CI 環境にない → `packageManager: npm` で解決。(2) `CLOUDFLARE_API_TOKEN` シークレットが未設定、その後 Global API Key を誤投入 → Cloudflare API Token（`cfut_` prefix、Edit Cloudflare Pages 権限）に差し替えで解決。
+- **Preferences**: デプロイ確認は `gh run list --limit 1` で status=success を必ず確認すること。
+- **Plan Impact**: GitHub Secrets は必ず設定済みか `gh secret list` で確認してから作業開始すること。`CLOUDFLARE_API_TOKEN` は Global API Key ではなく API Token（Edit Cloudflare Pages テンプレート）を使うこと。rules.md §5-B に追記済み。
+
+---
+
 ### [2026-03-20 Session 4] Mobile Menu Visibility & Event Handling
 - **Learned/Decided**: Standardized `viewport` meta tags in all HTML files. Found that Chrome's mobile emulation can be sensitive to meta tag syntax and attribute order. Added `touchstart` event support in `menu.js` (User change) to ensure compatibility with touch devices where `click` events might be delayed or blocked.
 - **Preferences**: Azuma confirmed that the menu is now functional. Diagnostic scripts were used and then removed.

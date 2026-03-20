@@ -78,6 +78,18 @@ CRITICAL: Before any action, you MUST read and strictly adhere to the global pro
 - **Cause**: Secret was added to GitHub Actions but not to Cloudflare Pages dashboard.
 - **Fix**: Go to Cloudflare Pages → Project → Settings → Environment Variables → Add secret with exact variable name.
 
+#### ❌ wrangler-action: "Unable to locate executable file: pnpm"
+- **Cause**: `wrangler-action@v3` defaults to pnpm, which is not installed in the default GitHub Actions runner.
+- **Fix**: Add `packageManager: npm` to the `with:` block of the wrangler-action step.
+
+#### ❌ wrangler-action: "Authentication error [code: 10000]"
+- **Cause**: `CLOUDFLARE_API_TOKEN` secret was empty OR was set to a Global API Key instead of a scoped API Token.
+- **Fix**:
+  1. Verify secrets are set: `gh secret list` (non-empty = listed, missing = not listed).
+  2. Create a proper **API Token** at https://dash.cloudflare.com/profile/api-tokens using the **"Edit Cloudflare Pages"** template. Do NOT use the Global API Key.
+  3. Set via: `printf '%s' '<token>' | gh secret set CLOUDFLARE_API_TOKEN`
+  4. Also add `env: CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}` to the workflow step for explicit passing.
+
 ### 5-C. Debug Steps
 1. Check Cloudflare Pages build logs first.
 2. Verify all secret variable names match exactly (case-sensitive).

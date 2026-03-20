@@ -33,6 +33,13 @@ Append a new entry immediately after every bug fix — no matter how small.
 - **Fix Summary**: Moved `overflow-x-hidden` from `<body>` to `<html>` in works.html and contact.html. Added `touchstart` handler (with `e.preventDefault()` to prevent ghost clicks) alongside existing `click` handler in menu.js via `addTapHandler()` helper.
 - **Prevention Note**: NEVER put `overflow: hidden` or `overflow-x: hidden` on `<body>`. Always put it on `<html>` instead. `body { overflow: hidden }` breaks `position: fixed` hit-testing in mobile browsers and DevTools emulation. See updated rules.md §9.
 
+### [2026-03-20 03:00] Bug: GitHub Actions deployment failing — pnpm not found / API token auth error
+- **Error**: (1) `Unable to locate executable file: pnpm` — wrangler-action tried to use pnpm which wasn't in the CI environment. (2) `Authentication error [code: 10000]` — token was a Global API Key, not an API Token.
+- **Root Cause**: Two separate issues: wrangler-action@v3 defaults to pnpm on Node.js environments where pnpm is absent; and the GitHub Secret `CLOUDFLARE_API_TOKEN` was never set (was empty), then set with a Global API Key instead of a scoped API Token.
+- **File(s) Modified**: `.github/workflows/deploy.yml`, GitHub Actions Secrets
+- **Fix Summary**: Added `packageManager: npm` and explicit `env:` block to workflow. Set `CLOUDFLARE_ACCOUNT_ID` secret. Replaced Global API Key with a proper Cloudflare API Token (created via API Tokens → Edit Cloudflare Pages template).
+- **Prevention Note**: `CLOUDFLARE_API_TOKEN` must be a **scoped API Token** from https://dash.cloudflare.com/profile/api-tokens (use "Edit Cloudflare Pages" template). Global API Keys do NOT work with wrangler. Always verify secrets are non-empty in the Actions log (`***` means set, blank means missing).
+
 <!-- No entries yet. Add entries in the format below as bugs are discovered and fixed. -->
 
 <!--

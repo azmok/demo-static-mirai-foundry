@@ -13,13 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }
 
-    if (openBtn && menu) {
-        openBtn.addEventListener('click', openMenu);
+    // Add both click and touchstart for DevTools mobile emulation compatibility
+    function addTapHandler(element, handler) {
+        if (!element) return;
+        element.addEventListener('click', handler);
+        element.addEventListener('touchstart', function(e) {
+            e.preventDefault(); // Prevent ghost click after touchstart
+            handler();
+        }, { passive: false });
     }
 
-    if (closeBtn && menu) {
-        closeBtn.addEventListener('click', closeMenu);
-    }
+    addTapHandler(openBtn, openMenu);
+    addTapHandler(closeBtn, closeMenu);
 
     // Close menu on nav link click
     const menuLinks = menu ? menu.querySelectorAll('a') : [];

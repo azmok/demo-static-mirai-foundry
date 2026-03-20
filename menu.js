@@ -3,26 +3,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.getElementById('mobile-menu-close');
     const menu = document.getElementById('mobile-menu');
 
+    function openMenu() {
+        menu.style.transform = 'translateX(0)';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        menu.style.transform = 'translateX(100%)';
+        document.body.style.overflow = '';
+    }
+
     if (openBtn && menu) {
-        openBtn.addEventListener('click', () => {
-            menu.classList.remove('translate-x-full');
-            document.body.classList.add('overflow-hidden');
-        });
+        openBtn.addEventListener('click', openMenu);
     }
 
     if (closeBtn && menu) {
-        closeBtn.addEventListener('click', () => {
-            menu.classList.add('translate-x-full');
-            document.body.classList.remove('overflow-hidden');
-        });
+        closeBtn.addEventListener('click', closeMenu);
     }
 
-    // Close menu on link click
+    // Close menu on nav link click
     const menuLinks = menu ? menu.querySelectorAll('a') : [];
     menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.add('translate-x-full');
-            document.body.classList.remove('overflow-hidden');
-        });
+        link.addEventListener('click', closeMenu);
     });
 });

@@ -32,6 +32,7 @@ Read this before starting any task that touches the areas listed below.
 |---|---|---|
 | Purging used classes | Dynamically constructed class names (e.g., `` `text-${color}-500` ``) get purged | Use complete class strings or safelist in `tailwind.config.ts` |
 | Dark mode conflicts | `color-scheme` not set → browser dark mode may invert colors unexpectedly | Force `color-scheme: light` in global CSS if dark mode is not intentionally supported |
+| Mobile Horizontal Overflow | `fixed` nav width tracking scrollWidth instead of viewport | Apply `overflow-x-hidden` to BOTH `html` and `body` to lock viewport width. |
 
 ---
 

@@ -1,356 +1,438 @@
 <!DOCTYPE html>
 
-<html class="scroll-smooth" lang="ja"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MIRAI FOUNDRY — Digital Artifacts Foundry</title>
-<meta name="description" content="Mirai Foundryは、アイデアを未来の体験へと鍛造するクリエイティブスタジオです。" />
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "on-surface-variant": "#4d4632",
-              "outline": "#7f765f",
-              "primary-fixed-dim": "#eec200",
-              "outline-variant": "#d1c6ab",
-              "surface-bright": "#fcf8f8",
-              "tertiary": "#635f41",
-              "on-secondary": "#ffffff",
-              "on-secondary-fixed-variant": "#1c10e4",
-              "tertiary-fixed": "#eae4bd",
-              "surface-tint": "#725c00",
-              "on-error-container": "#93000a",
-              "on-tertiary-fixed": "#1e1c05",
-              "on-secondary-fixed": "#05006d",
-              "error-container": "#ffdad6",
-              "surface-dim": "#dcd9d9",
-              "surface-variant": "#e5e2e1",
-              "on-primary-container": "#6c5700",
-              "on-error": "#ffffff",
-              "on-tertiary-container": "#5d5a3c",
-              "background": "#fcf8f8",
-              "on-tertiary": "#ffffff",
-              "on-primary": "#ffffff",
-              "error": "#ba1a1a",
-              "tertiary-container": "#d8d2ac",
-              "surface-container-highest": "#e5e2e1",
-              "surface-container-lowest": "#ffffff",
-              "inverse-primary": "#eec200",
-              "secondary-fixed": "#e1e0ff",
-              "primary": "#725c00",
-              "on-secondary-container": "#deddff",
-              "surface": "#fcf8f8",
-              "primary-container": "#facc00",
-              "surface-container-high": "#ebe7e7",
-              "primary-fixed": "#ffe081",
-              "secondary-container": "#4244ff",
-              "inverse-on-surface": "#f3f0ef",
-              "on-primary-fixed": "#231b00",
-              "on-surface": "#1c1b1b",
-              "on-primary-fixed-variant": "#564500",
-              "surface-container": "#f0edec",
-              "on-background": "#1c1b1b",
-              "secondary": "#231de8",
-              "on-tertiary-fixed-variant": "#4b482b",
-              "inverse-surface": "#313030",
-              "surface-container-low": "#f6f3f2",
-              "secondary-fixed-dim": "#c0c1ff",
-              "tertiary-fixed-dim": "#cdc8a2"
+<html class="scroll-smooth overflow-x-hidden" lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIRAI FOUNDRY — Digital Artifacts Foundry</title>
+    <meta name="description" content="Mirai Foundryは、アイデアを未来の体験へと鍛造するクリエイティブスタジオです。" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#4d4632",
+                        "outline": "#7f765f",
+                        "primary-fixed-dim": "#eec200",
+                        "outline-variant": "#d1c6ab",
+                        "surface-bright": "#fcf8f8",
+                        "tertiary": "#635f41",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#1c10e4",
+                        "tertiary-fixed": "#eae4bd",
+                        "surface-tint": "#725c00",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#1e1c05",
+                        "on-secondary-fixed": "#05006d",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#dcd9d9",
+                        "surface-variant": "#e5e2e1",
+                        "on-primary-container": "#6c5700",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#5d5a3c",
+                        "background": "#fcf8f8",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#d8d2ac",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#eec200",
+                        "secondary-fixed": "#e1e0ff",
+                        "primary": "#725c00",
+                        "on-secondary-container": "#deddff",
+                        "surface": "#fcf8f8",
+                        "primary-container": "#facc00",
+                        "surface-container-high": "#ebe7e7",
+                        "primary-fixed": "#ffe081",
+                        "secondary-container": "#4244ff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-primary-fixed": "#231b00",
+                        "on-surface": "#1c1b1b",
+                        "on-primary-fixed-variant": "#564500",
+                        "surface-container": "#f0edec",
+                        "on-background": "#1c1b1b",
+                        "secondary": "#231de8",
+                        "on-tertiary-fixed-variant": "#4b482b",
+                        "inverse-surface": "#313030",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "tertiary-fixed-dim": "#cdc8a2"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"],
+                        "jp": ["Noto Sans JP", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px" },
+                },
             },
-            fontFamily: {
-              "headline": ["Inter", "sans-serif"],
-              "body": ["Inter", "sans-serif"],
-              "label": ["Inter", "sans-serif"],
-              "jp": ["Noto Sans JP", "sans-serif"],
-            },
-            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
-          },
-        },
-      }
+        }
     </script>
-<style>
-        body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background-color: #fcf8f8; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-        .hard-cut-shadow { box-shadow: 16px 16px 0px 0px #0B0B0B; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .font-jp { font-family: 'Noto Sans JP', sans-serif; }
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: #fcf8f8;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .hard-cut-shadow {
+            box-shadow: 16px 16px 0px 0px #0B0B0B;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .font-jp {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
     </style>
 </head>
-<body class="antialiased select-none">
-<!-- Top Navigation -->
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[1.4rem] md:px-[7rem] py-6 mix-blend-difference transition-colors duration-0">
-<div class="text-2xl font-black tracking-tighter text-white">MIRAI FOUNDRY</div>
-<div class="hidden md:flex gap-12 items-center">
-<a class="text-[10px] uppercase tracking-[0.2em] font-black text-[#0B0B0B] bg-white px-2 py-1 transition-none" href="index.html">HOME</a>
-<a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1 transition-none" href="works.html">WORKS</a>
-<a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1 transition-none" href="about.html">ABOUT</a>
-<a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1 transition-none" href="contact.html">CONTACT</a>
-</div>
+
+<body class="antialiased select-none w-full overflow-x-hidden">
+    <!-- Top Navigation -->
+    <nav
+        class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-[1.4rem] md:px-[7rem] py-6 mix-blend-difference transition-colors duration-0">
+        <div class="text-2xl font-black tracking-tighter text-white">MIRAI FOUNDRY</div>
+        <div class="hidden md:flex gap-12 items-center">
+            <a class="text-[10px] uppercase tracking-[0.2em] font-black text-[#0B0B0B] bg-white px-2 py-1 transition-none"
+                href="index.html">HOME</a>
+            <a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1 transition-none"
+                href="works.html">WORKS</a>
+            <a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1 transition-none"
+                href="about.html">ABOUT</a>
+            <a class="text-[10px] uppercase tracking-[0.2em] font-bold text-white/70 hover:bg-white hover:text-[#0B0B0B] px-2 py-1 transition-none"
+                href="contact.html">CONTACT</a>
+        </div>
         <button id="mobile-menu-open" class="md:hidden text-white focus:outline-none">
             <span class="material-symbols-outlined">menu</span>
         </button>
-</nav>
-<!-- Hero Section -->
-<section class="min-h-screen bg-primary-container flex flex-col justify-end px-4 md:px-[7rem] pb-20 pt-32 overflow-hidden">
-<div class="relative z-10">
-<p class="text-[11px] uppercase tracking-[0.2em] font-black mb-4 text-on-background">EST. MMXXIV / TOKYO-BERLIN</p>
-<h1 class="text-[12vw] font-black tracking-[-0.04em] leading-[0.85] text-on-background uppercase">
-                Digital<br/>Artifacts<br/>Foundry
+    </nav>
+    <!-- Hero Section -->
+    <section
+        class="min-h-screen bg-primary-container flex flex-col justify-end px-4 md:px-[7rem] pb-20 pt-32 overflow-hidden">
+        <div class="relative z-10">
+            <p class="text-[11px] uppercase tracking-[0.2em] font-black mb-4 text-on-background">EST. MMXXIV /
+                TOKYO-BERLIN</p>
+            <h1 class="text-[10vw] md:text-[12vw] font-black tracking-[-0.04em] leading-[0.85] text-on-background uppercase overflow-wrap-anywhere">
+                Digital<br />Artifacts<br />Foundry
             </h1>
-<div class="mt-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
-<div class="max-w-md">
-<p class="text-lg leading-tight font-medium text-on-background mb-3">
-                        We construct high-fidelity digital environments and products that challenge the standard aesthetic of the modern web.
+            <div class="mt-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
+                <div class="max-w-md">
+                    <p class="text-lg leading-tight font-medium text-on-background mb-3">
+                        We construct high-fidelity digital environments and products that challenge the standard
+                        aesthetic of the modern web.
                     </p>
-<p class="font-jp text-sm leading-loose tracking-wide text-on-background/80">
-                        Mirai Foundryは、アイデアを未来の体験へと鍛造する<br/>
-                        小さなクリエイティブスタジオです。<br/>
-                        人間のビジョンとAIの拡張力を組み合わせ、<br/>
+                    <p class="font-jp text-sm leading-loose tracking-wide text-on-background/80">
+                        Mirai Foundryは、アイデアを未来の体験へと鍛造する<br />
+                        小さなクリエイティブスタジオです。<br />
+                        人間のビジョンとAIの拡張力を組み合わせ、<br />
                         これまでにない digital体験を設計します。
                     </p>
-</div>
-<button class="bg-on-background text-surface-container-lowest px-10 py-6 text-[11px] uppercase tracking-[0.2em] font-black hover:bg-surface-container-lowest hover:text-on-background transition-none">
+                </div>
+                <button
+                    class="bg-on-background text-surface-container-lowest px-10 py-6 text-[11px] uppercase tracking-[0.2em] font-black hover:bg-surface-container-lowest hover:text-on-background transition-none">
                     Start a Project
                 </button>
-</div>
-</div>
-</section>
-<!-- Manifesto Section -->
-<section class="bg-[#0B0B0B] py-32 md:py-64 px-4 md:px-[7rem]">
-<div class="grid grid-cols-12 gap-0">
-<div class="col-span-12 md:col-start-4 md:col-span-8">
-<p class="text-[11px] uppercase tracking-[0.2em] text-white/50 mb-2">THE MANIFESTO</p>
-<p class="font-jp font-medium text-sm tracking-widest opacity-70 text-white mb-12">マニフェスト</p>
-<h2 class="text-4xl md:text-7xl font-black text-white leading-tight mb-12">
-                    WE REJECT SOFTNESS. WE EMBRACE THE GRID. WE BELIEVE IN TYPOGRAPHY AS ARCHITECTURE. NO RADIUS. NO BLURS. ONLY PRECISION.
+            </div>
+        </div>
+    </section>
+    <!-- Manifesto Section -->
+    <section class="bg-[#0B0B0B] py-32 md:py-64 px-4 md:px-[7rem]">
+        <div class="grid grid-cols-12 gap-0">
+            <div class="col-span-12 md:col-start-4 md:col-span-8">
+                <p class="text-[11px] uppercase tracking-[0.2em] text-white/50 mb-2">THE MANIFESTO</p>
+                <p class="font-jp font-medium text-sm tracking-widest opacity-70 text-white mb-12">マニフェスト</p>
+                <h2 class="text-4xl md:text-7xl font-black text-white leading-tight mb-12">
+                    WE REJECT SOFTNESS. WE EMBRACE THE GRID. WE BELIEVE IN TYPOGRAPHY AS ARCHITECTURE. NO RADIUS. NO
+                    BLURS. ONLY PRECISION.
                 </h2>
-<p class="font-jp text-base leading-loose tracking-wide text-white/70 mb-16">
-                    未来は、作られるものではありません。設計されるものです。<br/>
-                    テクノロジーは、実行を加速させます。AIは、思考の可能性を広げます。<br/>
-                    しかし、最初のビジョンを生むのはいつも人間です。<br/>
-                    Mirai Foundryは、人間の直感とAIの拡張力を掛け合わせ、<br/>
+                <p class="font-jp text-base leading-loose tracking-wide text-white/70 mb-16">
+                    未来は、作られるものではありません。設計されるものです。<br />
+                    テクノロジーは、実行を加速させます。AIは、思考の可能性を広げます。<br />
+                    しかし、最初のビジョンを生むのはいつも人間です。<br />
+                    Mirai Foundryは、人間の直感とAIの拡張力を掛け合わせ、<br />
                     アイデアを新しい形へと鍛造します。
                 </p>
-<div class="w-24 h-2 bg-primary-container"></div>
-</div>
-</div>
-</section>
-<!-- Process Section (Electric Blue) -->
-<section class="bg-secondary py-32 px-4 md:px-[7rem]">
-<div class="mb-24 flex justify-between items-start">
-<div>
-<h2 class="text-[8vw] font-black tracking-tight text-white leading-none">PROCESS / <span class="font-jp font-medium text-sm tracking-widest opacity-70">アイデアが形になるまで</span></h2>
-</div>
-<p class="text-[11px] uppercase tracking-[0.2em] text-white/70 text-right">01 — 05</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-y-1 gap-x-0 md:gap-x-12">
-<!-- Step 01 -->
-<div class="md:col-span-4 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none">
-<p class="text-6xl font-black mb-8">01</p>
-<p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-2">Discovery</p>
-<p class="font-jp text-xs leading-loose tracking-wide opacity-70 group-hover:opacity-100">ビジョンを描く：プロジェクトの本質を見極め、目指す方向を定義します。</p>
-</div>
-<!-- Step 02 -->
-<div class="md:col-start-7 md:col-span-5 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none mt-12">
-<p class="text-6xl font-black mb-8">02</p>
-<p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-2">Brutalism</p>
-<p class="font-jp text-xs leading-loose tracking-wide opacity-70 group-hover:opacity-100">AIによる思考拡張：AIを活用し、可能性の幅を一気に広げます。</p>
-</div>
-<!-- Step 03 -->
-<div class="md:col-span-6 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none mt-4">
-<p class="text-6xl font-black mb-8">03</p>
-<p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-2">Forging</p>
-<p class="font-jp text-xs leading-loose tracking-wide opacity-70 group-hover:opacity-100">コンセプト設計：最も強いアイデアを抽出し、核となるコンセプトを作ります。</p>
-</div>
-<!-- Step 04 -->
-<div class="md:col-start-8 md:col-span-4 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none mt-20">
-<p class="text-6xl font-black mb-8">04</p>
-<p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-2">Logic</p>
-<p class="font-jp text-xs leading-loose tracking-wide opacity-70 group-hover:opacity-100">デザイン構築：ビジュアル・体験・構造を一つの形にまとめ上げます。</p>
-</div>
-<!-- Step 05 -->
-<div class="md:col-span-3 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none mt-8">
-<p class="text-6xl font-black mb-8">05</p>
-<p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-2">Impact</p>
-<p class="font-jp text-xs leading-loose tracking-wide opacity-70 group-hover:opacity-100">体験として実装：アイデアを実際のデジタル体験として完成させます。</p>
-</div>
-</div>
-</section>
-<!-- Services Section -->
-<section class="bg-tertiary-fixed py-32 px-4 md:px-[7rem]">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
-<div class="md:col-span-5">
-<p class="text-[11px] uppercase tracking-[0.2em] font-black mb-1 text-on-tertiary-fixed">CAPABILITIES / <span class="font-jp font-medium text-xs tracking-widest opacity-70">できること</span></p>
-<h3 class="text-6xl font-black text-on-tertiary-fixed leading-[0.9] tracking-tighter">VERSATILE<br/>PRECISION</h3>
-</div>
-<div class="md:col-span-7 flex flex-col gap-1">
-<div class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
-<div>
-<span class="text-2xl font-black block">Brand Identity / <span class="font-jp text-xs tracking-wide opacity-60 group-hover:opacity-100">ブランド戦略</span></span>
-</div>
-<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
-</div>
-<div class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
-<div>
-<span class="text-2xl font-black block">Web Experience / <span class="font-jp text-xs tracking-wide opacity-60 group-hover:opacity-100">Webサイト・デジタル体験</span></span>
-</div>
-<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
-</div>
-<div class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
-<div>
-<span class="text-2xl font-black block">Concept Design / <span class="font-jp text-xs tracking-wide opacity-60 group-hover:opacity-100">コンセプト設計</span></span>
-</div>
-<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
-</div>
-<div class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
-<div>
-<span class="text-2xl font-black block">Digital Products / <span class="font-jp text-xs tracking-wide opacity-60 group-hover:opacity-100">プロダクトUI・UX</span></span>
-</div>
-<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
-</div>
-<div class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
-<div>
-<span class="text-2xl font-black block">Creative Direction / <span class="font-jp text-xs tracking-wide opacity-60 group-hover:opacity-100">クリエイティブディレクション</span></span>
-</div>
-<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
-</div>
-</div>
-</section>
+                <div class="w-24 h-2 bg-primary-container"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Process Section (Electric Blue) -->
+    <section class="bg-secondary py-32 px-4 md:px-[7rem]">
+        <div class="mb-24 flex justify-between items-start">
+            <div>
+                <h2 class="text-[8vw] font-black tracking-tight text-white leading-none">PROCESS / <span
+                        class="font-jp font-medium text-sm tracking-widest opacity-70">アイデアが形になるまで</span></h2>
+            </div>
+            <p class="text-[11px] uppercase tracking-[0.2em] text-white/70 text-right">01 — 05</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-y-1 gap-x-0 md:gap-x-12">
+            <!-- Step 01 -->
+            <div
+                class="md:col-span-4 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none">
+                <p class="text-6xl font-black mb-8">01</p>
+                <p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-2">Discovery</p>
+                <p class="font-jp text-xs leading-loose tracking-wide opacity-70 group-hover:opacity-100">
+                    ビジョンを描く：プロジェクトの本質を見極め、目指す方向を定義します。</p>
+            </div>
+            <!-- Step 02 -->
+            <div
+                class="md:col-start-7 md:col-span-5 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none mt-12">
+                <p class="text-6xl font-black mb-8">02</p>
+                <p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-2">Brutalism</p>
+                <p class="font-jp text-xs leading-loose tracking-wide opacity-70 group-hover:opacity-100">
+                    AIによる思考拡張：AIを活用し、可能性の幅を一気に広げます。</p>
+            </div>
+            <!-- Step 03 -->
+            <div
+                class="md:col-span-6 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none mt-4">
+                <p class="text-6xl font-black mb-8">03</p>
+                <p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-2">Forging</p>
+                <p class="font-jp text-xs leading-loose tracking-wide opacity-70 group-hover:opacity-100">
+                    コンセプト設計：最も強いアイデアを抽出し、核となるコンセプトを作ります。</p>
+            </div>
+            <!-- Step 04 -->
+            <div
+                class="md:col-start-8 md:col-span-4 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none mt-20">
+                <p class="text-6xl font-black mb-8">04</p>
+                <p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-2">Logic</p>
+                <p class="font-jp text-xs leading-loose tracking-wide opacity-70 group-hover:opacity-100">
+                    デザイン構築：ビジュアル・体験・構造を一つの形にまとめ上げます。</p>
+            </div>
+            <!-- Step 05 -->
+            <div
+                class="md:col-span-3 bg-white/5 p-8 mb-1 border-white/10 hover:bg-white hover:text-secondary group transition-none mt-8">
+                <p class="text-6xl font-black mb-8">05</p>
+                <p class="text-[11px] uppercase tracking-[0.2em] font-bold mb-2">Impact</p>
+                <p class="font-jp text-xs leading-loose tracking-wide opacity-70 group-hover:opacity-100">
+                    体験として実装：アイデアを実際のデジタル体験として完成させます。</p>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section class="bg-tertiary-fixed py-32 px-4 md:px-[7rem]">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-5">
+                <p class="text-[11px] uppercase tracking-[0.2em] font-black mb-1 text-on-tertiary-fixed">CAPABILITIES /
+                    <span class="font-jp font-medium text-xs tracking-widest opacity-70">できること</span>
+                </p>
+                <h3 class="text-6xl font-black text-on-tertiary-fixed leading-[0.9] tracking-tighter">
+                    VERSATILE<br />PRECISION</h3>
+            </div>
+            <div class="md:col-span-7 flex flex-col gap-1">
+                <div
+                    class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
+                    <div>
+                        <span class="text-2xl font-black block">Brand Identity / <span
+                                class="font-jp text-xs tracking-wide opacity-60 group-hover:opacity-100">ブランド戦略</span></span>
+                    </div>
+                    <span
+                        class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+                <div
+                    class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
+                    <div>
+                        <span class="text-2xl font-black block">Web Experience / <span
+                                class="font-jp text-xs tracking-wide opacity-60 group-hover:opacity-100">Webサイト・デジタル体験</span></span>
+                    </div>
+                    <span
+                        class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+                <div
+                    class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
+                    <div>
+                        <span class="text-2xl font-black block">Concept Design / <span
+                                class="font-jp text-xs tracking-wide opacity-60 group-hover:opacity-100">コンセプト設計</span></span>
+                    </div>
+                    <span
+                        class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+                <div
+                    class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
+                    <div>
+                        <span class="text-2xl font-black block">Digital Products / <span
+                                class="font-jp text-xs tracking-wide opacity-60 group-hover:opacity-100">プロダクトUI・UX</span></span>
+                    </div>
+                    <span
+                        class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+                <div
+                    class="border-b-2 border-on-tertiary-fixed py-6 flex justify-between items-center group cursor-pointer hover:bg-on-tertiary-fixed hover:text-tertiary-fixed px-4 transition-none">
+                    <div>
+                        <span class="text-2xl font-black block">Creative Direction / <span
+                                class="font-jp text-xs tracking-wide opacity-60 group-hover:opacity-100">クリエイティブディレクション</span></span>
+                    </div>
+                    <span
+                        class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+    </section>
 
-<!-- AI Creative Workflow Section -->
-<section class="bg-secondary py-32 md:py-40 px-[1.4rem] md:px-[7rem]">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-<div class="md:col-span-6">
-<p class="text-[11px] uppercase tracking-[0.2em] font-black text-white/50 mb-1">AI CREATIVE WORKFLOW / <span class="font-jp font-medium text-xs tracking-widest opacity-70">AIとクリエイティブ</span></p>
-<h2 class="text-5xl md:text-7xl font-black text-white leading-none tracking-tight">
-        AI doesn't<br/>replace<br/>creativity.
-    </h2>
-</div>
-<div class="md:col-span-6 md:pt-16">
-<p class="font-jp text-base leading-loose tracking-wide text-white/80">
-        AIはクリエイティブを置き換えるものではありません。<br/>
-        可能性を広げ、思考を加速させるためのツールです。<br/>
-        Mirai Foundryでは、AIをリサーチ・発想・ビジュアル生成などに活用し、<br/>
-        人間のクリエイティブを拡張します。
-    </p>
-</div>
-</div>
-</section>
+    <!-- AI Creative Workflow Section -->
+    <section class="bg-secondary py-32 md:py-40 px-[1.4rem] md:px-[7rem]">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+            <div class="md:col-span-6">
+                <p class="text-[11px] uppercase tracking-[0.2em] font-black text-white/50 mb-1">AI CREATIVE WORKFLOW /
+                    <span class="font-jp font-medium text-xs tracking-widest opacity-70">AIとクリエイティブ</span>
+                </p>
+                <h2 class="text-5xl md:text-7xl font-black text-white leading-none tracking-tight">
+                    AI doesn't<br />replace<br />creativity.
+                </h2>
+            </div>
+            <div class="md:col-span-6 md:pt-16">
+                <p class="font-jp text-base leading-loose tracking-wide text-white/80">
+                    AIはクリエイティブを置き換えるものではありません。<br />
+                    可能性を広げ、思考を加速させるためのツールです。<br />
+                    Mirai Foundryでは、AIをリサーチ・発想・ビジュアル生成などに活用し、<br />
+                    人間のクリエイティブを拡張します。
+                </p>
+            </div>
+        </div>
+    </section>
 
-<!-- Studio Section -->
-<section class="bg-tertiary-fixed py-32 md:py-40 px-[1.4rem] md:px-[7rem]">
-<div class="max-w-4xl mx-auto text-center">
-<p class="text-[11px] uppercase tracking-[0.2em] font-black text-on-tertiary-fixed/50 mb-1">STUDIO / <span class="font-jp font-medium text-xs tracking-widest opacity-70">スタジオ</span></p>
-<h2 class="text-5xl md:text-7xl font-black text-on-tertiary-fixed leading-none tracking-tight mb-12">
-    Small team.<br/>Massive output.
-</h2>
-<p class="font-jp text-base leading-loose tracking-wide text-on-tertiary-fixed/80 max-w-2xl mx-auto">
-    Mirai Foundryは、小さなチームで運営されています。<br/>
-    少数だからこそ、意思決定は速く、クリエイティブに集中できます。<br/>
-    AIの力を活用することで、小さなチームでも大きな価値を生み出せると考えています。
-</p>
-</div>
-</section>
-
-<!-- Works Preview -->
-<section class="bg-surface-container-lowest py-32 px-4 md:px-[7rem]" id="work">
-<p class="text-[11px] uppercase tracking-[0.2em] font-black mb-16 text-on-background">SELECTED ARTIFACTS</p>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-0">
-<!-- Card 1 (Yellow) -->
-<div class="bg-primary-container p-12 aspect-[4/5] flex flex-col justify-between hover:-translate-y-4 transition-transform cursor-pointer group">
-<div class="flex justify-between items-start">
-<p class="text-[10px] font-black uppercase tracking-widest text-on-background">SYSTEM 01</p>
-<span class="material-symbols-outlined text-on-background opacity-0 group-hover:opacity-100">north_east</span>
-</div>
-<div>
-<h4 class="text-4xl font-black text-on-background mb-4">KINETIC ENGINE</h4>
-<p class="text-[11px] uppercase tracking-widest text-on-background/60">AUTOMOTIVE / INTERFACE</p>
-</div>
-</div>
-<!-- Card 2 (Blue) -->
-<div class="bg-secondary p-12 aspect-[4/5] flex flex-col justify-between md:translate-y-16 hover:translate-y-12 transition-transform cursor-pointer group">
-<div class="flex justify-between items-start">
-<p class="text-[10px] font-black uppercase tracking-widest text-white">SYSTEM 02</p>
-<span class="material-symbols-outlined text-white opacity-0 group-hover:opacity-100">north_east</span>
-</div>
-<div>
-<h4 class="text-4xl font-black text-white mb-4">NEON VAULT</h4>
-<p class="text-[11px] uppercase tracking-widest text-white/60">FINTECH / CRYPTO</p>
-</div>
-</div>
-<!-- Card 3 (Warm White) -->
-<div class="bg-tertiary-fixed p-12 aspect-[4/5] flex flex-col justify-between hover:-translate-y-4 transition-transform cursor-pointer group">
-<div class="flex justify-between items-start">
-<p class="text-[10px] font-black uppercase tracking-widest text-on-tertiary-fixed">SYSTEM 03</p>
-<span class="material-symbols-outlined text-on-tertiary-fixed opacity-0 group-hover:opacity-100">north_east</span>
-</div>
-<div>
-<h4 class="text-4xl font-black text-on-tertiary-fixed mb-4">OASIS PROTOCOL</h4>
-<p class="text-[11px] uppercase tracking-widest text-on-tertiary-fixed/60">LIFESTYLE / WEB3</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Final CTA -->
-<section class="bg-[#0B0B0B] py-32 md:py-64 px-4 md:px-[7rem] overflow-hidden relative">
-<div class="relative z-10">
-<h2 class="text-[10vw] font-black text-white leading-none tracking-tighter mb-20 uppercase">
-                Ready to<br/>Confront the<br/>Standard?
+    <!-- Studio Section -->
+    <section class="bg-tertiary-fixed py-32 md:py-40 px-[1.4rem] md:px-[7rem]">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-[11px] uppercase tracking-[0.2em] font-black text-on-tertiary-fixed/50 mb-1">STUDIO / <span
+                    class="font-jp font-medium text-xs tracking-widest opacity-70">スタジオ</span></p>
+            <h2 class="text-5xl md:text-7xl font-black text-on-tertiary-fixed leading-none tracking-tight mb-12">
+                Small team.<br />Massive output.
             </h2>
-<div class="flex flex-col md:flex-row gap-1">
-<button class="bg-primary-container text-on-background px-16 py-8 text-[11px] uppercase tracking-[0.2em] font-black hover:bg-white transition-none">
+            <p class="font-jp text-base leading-loose tracking-wide text-on-tertiary-fixed/80 max-w-2xl mx-auto">
+                Mirai Foundryは、小さなチームで運営されています。<br />
+                少数だからこそ、意思決定は速く、クリエイティブに集中できます。<br />
+                AIの力を活用することで、小さなチームでも大きな価値を生み出せると考えています。
+            </p>
+        </div>
+    </section>
+
+    <!-- Works Preview -->
+    <section class="bg-surface-container-lowest py-32 px-4 md:px-[7rem]" id="work">
+        <p class="text-[11px] uppercase tracking-[0.2em] font-black mb-16 text-on-background">SELECTED ARTIFACTS</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+            <!-- Card 1 (Yellow) -->
+            <div
+                class="bg-primary-container p-12 aspect-[4/5] flex flex-col justify-between hover:-translate-y-4 transition-transform cursor-pointer group">
+                <div class="flex justify-between items-start">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-on-background">SYSTEM 01</p>
+                    <span
+                        class="material-symbols-outlined text-on-background opacity-0 group-hover:opacity-100">north_east</span>
+                </div>
+                <div>
+                    <h4 class="text-4xl font-black text-on-background mb-4">KINETIC ENGINE</h4>
+                    <p class="text-[11px] uppercase tracking-widest text-on-background/60">AUTOMOTIVE / INTERFACE</p>
+                </div>
+            </div>
+            <!-- Card 2 (Blue) -->
+            <div
+                class="bg-secondary p-12 aspect-[4/5] flex flex-col justify-between md:translate-y-16 hover:translate-y-12 transition-transform cursor-pointer group">
+                <div class="flex justify-between items-start">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-white">SYSTEM 02</p>
+                    <span
+                        class="material-symbols-outlined text-white opacity-0 group-hover:opacity-100">north_east</span>
+                </div>
+                <div>
+                    <h4 class="text-4xl font-black text-white mb-4">NEON VAULT</h4>
+                    <p class="text-[11px] uppercase tracking-widest text-white/60">FINTECH / CRYPTO</p>
+                </div>
+            </div>
+            <!-- Card 3 (Warm White) -->
+            <div
+                class="bg-tertiary-fixed p-12 aspect-[4/5] flex flex-col justify-between hover:-translate-y-4 transition-transform cursor-pointer group">
+                <div class="flex justify-between items-start">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-on-tertiary-fixed">SYSTEM 03</p>
+                    <span
+                        class="material-symbols-outlined text-on-tertiary-fixed opacity-0 group-hover:opacity-100">north_east</span>
+                </div>
+                <div>
+                    <h4 class="text-4xl font-black text-on-tertiary-fixed mb-4">OASIS PROTOCOL</h4>
+                    <p class="text-[11px] uppercase tracking-widest text-on-tertiary-fixed/60">LIFESTYLE / WEB3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Final CTA -->
+    <section class="bg-[#0B0B0B] py-32 md:py-64 px-4 md:px-[7rem] overflow-hidden relative">
+        <div class="relative z-10">
+            <h2 class="text-[10vw] font-black text-white leading-none tracking-tighter mb-20 uppercase">
+                Ready to<br />Confront the<br />Standard?
+            </h2>
+            <div class="flex flex-col md:flex-row gap-1">
+                <button
+                    class="bg-primary-container text-on-background px-16 py-8 text-[11px] uppercase tracking-[0.2em] font-black hover:bg-white transition-none">
                     Initiate Sequence
                 </button>
-<button class="border-2 border-white text-white px-16 py-8 text-[11px] uppercase tracking-[0.2em] font-black hover:bg-white hover:text-black transition-none">
+                <button
+                    class="border-2 border-white text-white px-16 py-8 text-[11px] uppercase tracking-[0.2em] font-black hover:bg-white hover:text-black transition-none">
                     View Journal
                 </button>
-</div>
-</div>
-<div class="absolute right-0 bottom-0 opacity-10 pointer-events-none">
-<span class="text-[30vw] font-black text-white leading-none tracking-tighter select-none">MIRAI</span>
-</div>
-</section>
-<!-- Footer -->
-<footer class="w-full bg-[#0B0B0B] px-4 md:px-[7rem] py-12 flex flex-col md:flex-row justify-between items-center border-t border-white/10">
-<div class="mb-8 md:mb-0">
-<div class="text-lg font-black text-white mb-2">MIRAI FOUNDRY</div>
-<p class="text-[11px] uppercase tracking-[0.15em] text-white/40">©2024 MIRAI FOUNDRY. ALL RIGHTS RESERVED.</p>
-</div>
-<div class="flex gap-12">
-<a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none" href="#">INSTAGRAM</a>
-<a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none" href="#">TWITTER</a>
-<a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none" href="#">LINKEDIN</a>
-</div>
-</footer>
-<!-- Data-Strip Overlay (Signature Component) -->
-<div class="fixed right-0 top-1/2 -rotate-90 origin-right translate-x-[calc(50%-12px)] hidden lg:block z-50">
-<div class="bg-on-background text-primary-container px-6 py-2 flex items-center gap-4">
-<span class="text-[10px] uppercase tracking-[0.2em] font-black">LATENCY: 12MS</span>
-<div class="w-2 h-2 bg-primary-container animate-pulse"></div>
-<span class="text-[10px] uppercase tracking-[0.2em] font-black">SYSTEM STATUS: ACTIVE</span>
-</div>
-</div>
-<!-- Mobile Menu Overlay -->
-<div id="mobile-menu" class="fixed inset-0 bg-[#0B0B0B]" style="z-index:200; transform: translateX(100%); transition: transform 0.3s ease;">
-    <div class="flex flex-col h-full px-[1.4rem] py-6">
-        <div class="flex justify-between items-center mb-16">
-            <div class="text-2xl font-black tracking-tighter text-white">MIRAI FOUNDRY</div>
-            <button id="mobile-menu-close" class="text-white focus:outline-none">
-                <span class="material-symbols-outlined">close</span>
-            </button>
+            </div>
         </div>
-        <nav class="flex flex-col gap-8">
-            <a class="text-4xl font-black text-white uppercase tracking-tighter" href="index.html">HOME</a>
-            <a class="text-4xl font-black text-white/60 uppercase tracking-tighter hover:text-white" href="works.html">WORKS</a>
-            <a class="text-4xl font-black text-white/60 uppercase tracking-tighter hover:text-white" href="about.html">ABOUT</a>
-            <a class="text-4xl font-black text-white/60 uppercase tracking-tighter hover:text-white" href="contact.html">CONTACT</a>
-        </nav>
+        <div class="absolute right-0 bottom-0 opacity-10 pointer-events-none">
+            <span class="text-[30vw] font-black text-white leading-none tracking-tighter select-none">MIRAI</span>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer
+        class="w-full bg-[#0B0B0B] px-4 md:px-[7rem] py-12 flex flex-col md:flex-row justify-between items-center border-t border-white/10">
+        <div class="mb-8 md:mb-0">
+            <div class="text-lg font-black text-white mb-2">MIRAI FOUNDRY</div>
+            <p class="text-[11px] uppercase tracking-[0.15em] text-white/40">©2024 MIRAI FOUNDRY. ALL RIGHTS RESERVED.
+            </p>
+        </div>
+        <div class="flex gap-12">
+            <a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none"
+                href="#">INSTAGRAM</a>
+            <a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none"
+                href="#">TWITTER</a>
+            <a class="text-[11px] uppercase tracking-[0.15em] text-white/60 hover:text-[#FACC00] transition-none"
+                href="#">LINKEDIN</a>
+        </div>
+    </footer>
+    <!-- Data-Strip Overlay (Signature Component) -->
+    <div class="fixed right-0 top-1/2 -rotate-90 origin-right translate-x-[calc(50%-12px)] hidden lg:block z-50">
+        <div class="bg-on-background text-primary-container px-6 py-2 flex items-center gap-4">
+            <span class="text-[10px] uppercase tracking-[0.2em] font-black">LATENCY: 12MS</span>
+            <div class="w-2 h-2 bg-primary-container animate-pulse"></div>
+            <span class="text-[10px] uppercase tracking-[0.2em] font-black">SYSTEM STATUS: ACTIVE</span>
+        </div>
     </div>
-</div>
-<script src="./menu.js"></script>
-</body></html>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0B0B0B]"
+        style="z-index:200; transform: translateX(100%); transition: transform 0.3s ease;">
+        <div class="flex flex-col h-full px-[1.4rem] py-6">
+            <div class="flex justify-between items-center mb-16">
+                <div class="text-2xl font-black tracking-tighter text-white">MIRAI FOUNDRY</div>
+                <button id="mobile-menu-close" class="text-white focus:outline-none">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-8">
+                <a class="text-4xl font-black text-white uppercase tracking-tighter" href="index.html">HOME</a>
+                <a class="text-4xl font-black text-white/60 uppercase tracking-tighter hover:text-white"
+                    href="works.html">WORKS</a>
+                <a class="text-4xl font-black text-white/60 uppercase tracking-tighter hover:text-white"
+                    href="about.html">ABOUT</a>
+                <a class="text-4xl font-black text-white/60 uppercase tracking-tighter hover:text-white"
+                    href="contact.html">CONTACT</a>
+            </nav>
+        </div>
+    </div>
+    <script src="./menu.js"></script>
+</body>
+
+</html>

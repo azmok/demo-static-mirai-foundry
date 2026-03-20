@@ -47,13 +47,9 @@ Append a new entry immediately after every bug fix — no matter how small.
 - **Fix Summary**: Added `--branch=main` to the wrangler pages deploy command. Now all deploys from GitHub Actions update `https://demo-static-mirai-foundry.pages.dev` directly.
 - **Prevention Note**: The deploy command MUST be `pages deploy . --project-name=<name> --branch=main`. Without `--branch=main`, every deploy generates a new random URL. See rules.md §5-A.
 
-<!-- No entries yet. Add entries in the format below as bugs are discovered and fixed. -->
-
-<!--
-### [YYYY-MM-DD HH:mm] Bug: <short title>
-- **Error**: (Exact error message or symptom)
-- **Root Cause**: (What actually caused it — be specific)
-- **File(s) Modified**: (e.g., `src/app/page.tsx`)
-- **Fix Summary**: (What was changed and why it resolved the issue)
-- **Prevention Note**: (What to watch out for in the future)
--->
+### [2026-03-21 06:40] Bug: Mobile menu / Fixed nav width pushed off-screen despite w-full
+- **Error**: Nav menu (hamburger) not visible on `works.html` and `contact.html` in Chrome DevTools mobile emulation (iPhone SE).
+- **Root Cause**: Browser "scroll delegation" rules. If only `html` has `overflow-x: hidden`, the browser may delegate scroll control to `body`. If an internal element (like a `12vw` header) overflows, the `body`'s scrollable width expands beyond the viewport, causing `fixed` elements with `w-full` to track the expanded scroll width rather than the viewport width.
+- **File(s) Modified**: `index.html`, `works.html`, `contact.html`
+- **Fix Summary**: Added `overflow-x-hidden` to **both** `<html>` and `<body>` tags. This "locks" the scrollable width to the viewport on both levels, forcing `fixed` elements to correctly respect the 100% viewport width.
+- **Prevention Note**: Always pair `html { overflow-x: hidden }` with `body { overflow-x: hidden }` for projects with large typography or `fixed` navbars to ensure consistent mobile layout.
